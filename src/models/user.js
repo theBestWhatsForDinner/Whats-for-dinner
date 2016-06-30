@@ -25,7 +25,6 @@ userSchema.pre("save", function (next) {
     if (!user.isModified("password")) {
         return next();
     } else {
-        // hash the password
         bcrypt.hash(user.password, 10, function (err, hash) {
             if (err) return next(err);
             user.password = hash;
