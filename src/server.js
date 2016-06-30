@@ -5,7 +5,7 @@ var cors = require("cors");
 var mongoose = require("mongoose");
 var morgan = require("morgan");
 var config = require("./config");
-var port = process.env.PORT || 6000;
+var port = process.env.PORT || 8000;
 var recipesSchema = require("./models/recipes");
 var userSchema = require("./models/user");
 
@@ -20,9 +20,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 app.use("/recipes", require("./routes/recipeRoutes"));
-app.get("/", function(req, res){
-    res.send("lololo");
-});
 
 app.listen(port, function () {
     console.log("I hear dead people..." + port);

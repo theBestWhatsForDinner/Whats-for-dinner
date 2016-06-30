@@ -7,4 +7,5 @@ var controller = app.controller("CalendarController", ["$scope", "calanderServic
             $scope.mealsList = meals;
         })
     }();
+    
 }]);
