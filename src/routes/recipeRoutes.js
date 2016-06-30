@@ -1,0 +1,21 @@
+var express = require("express");
+var recipesRouter = express.Router();
+var Recipes = require("../models/recipes");
+
+recipesRouter.routes("/")
+    .get(function (req, res) {
+        Recipes.find({
+            user: req.user._id
+        }, function (err, recipes) {
+            if (err) res.status(500).send(err);
+            else res.send(recipes);
+        });
+    })
+    .post(function (req, res) {
+        var newRecipe = new Recipes(req.body);
+        newRecipe.user = req.user._id;
+        newRecipe.save(function (err, recipe) {
+            if (err) res.status(500).send(err);
+            else res.status(201).send(recipe);
+        });
+    });
