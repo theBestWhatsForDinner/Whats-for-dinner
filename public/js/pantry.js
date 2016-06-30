@@ -22,4 +22,9 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
         $scope.pantry = response.data;
     });
     
+    $scope.theService.deleteIngredient(ingredient).then(function (response) {
+        $scope.pantry = response.data;
+    });
+    
+    
 }]);

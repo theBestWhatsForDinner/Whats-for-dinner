@@ -46,12 +46,18 @@ app.service("theService", ["$http", function ($http) {
         return $http.post("http://localhost:8000/pantry/", ingredient);
     };
 
+    //Change Ingredient Quantity
+
+    this.putIngredient = function (key, ingredient) {
+        return $http.put("http://localhost:8000/pantry/" + ingredient._id, ingredient);
+    };
+
     //Delete Ingredient in Pantry
 
     this.deleteIngredient = function (ingredient) {
         return $http.delete("http://localhost:8000/pantry" + ingredient._id);
     };
-    
+
     //******CALENDAR******
 
 }]);
