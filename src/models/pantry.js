@@ -10,6 +10,10 @@ var pantrySchema = new Schema({
         type: Number,
         required: true
     },
+    expiration: {
+        type: Number,
+        required: true
+    },
     itemImg: {
         type: String
     },
