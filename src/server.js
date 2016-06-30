@@ -13,9 +13,9 @@ mongoose.connect(config.database, function () {
     console.log("Mongoose is chasing the snake!");
 });
 // this will console log only if connected to mongodb
-mongoose.connection.on("connected", function () {  
-  console.log("conected to mongod");
-}); 
+mongoose.connection.on("connected", function () {
+    console.log("conected to mongod");
+});
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
@@ -27,6 +27,7 @@ app.use("/api", expressJwt({
 
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/api/recipes", require("./routes/recipeRoutes"));
+app.use("/api/pantry", require("./routes/pantryRoutes"))
 
 app.listen(port, function () {
     console.log("I hear dead people..." + port);

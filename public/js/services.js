@@ -30,14 +30,14 @@ app.service("theService", ["$http", function ($http) {
     //Delete Recipe
 
     this.deleteRecipe = function (recipe) {
-        return $http.delete("http://localhost:8000/recipes" + recipe._id).then(function (response) {});
+        return $http.delete("http://localhost:8000/recipes" + recipe._id);
     };
 
     //******PANTRY******
 
     //List ingredients in Pantry
 
-    this.getIngredients =
+    this.getPantry =
         $http.get("http://localhost:8000/pantry");
 
     //Add Ingredient to Pantry
@@ -49,7 +49,7 @@ app.service("theService", ["$http", function ($http) {
     //Delete Ingredient in Pantry
 
     this.deleteIngredient = function (ingredient) {
-        return $http.delete("http://localhost:8000/pantry" + ingredient._id).then(function (response) {});
+        return $http.delete("http://localhost:8000/pantry" + ingredient._id);
     };
     
     //******CALENDAR******

@@ -19,7 +19,7 @@ app.config(function ($routeProvider) {
             templateUrl: "calendar.html",
             controller: "CalendarController"
         })
-        .when("/recipes/:id", {
+        .when("/recipes/:recipeId", {
             templateUrl: "recipe.html",
             controller: "RecipeController"
         })
