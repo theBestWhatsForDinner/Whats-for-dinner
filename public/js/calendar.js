@@ -7,7 +7,6 @@ app.controller("CalendarController", ["$scope", function ($scope, calanderServic
 //            $scope.mealsList = meals;
 //        })
 //    }();
-//    app.controller('UsersIndexController', ['$scope', function($scope) {
   // ... code omitted ...
   // Dates can be passed as strings or Date objects 
   $scope.calendarOptions = {
