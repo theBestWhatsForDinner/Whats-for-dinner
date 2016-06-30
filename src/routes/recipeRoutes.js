@@ -19,3 +19,11 @@ recipesRouter.routes("/")
             else res.status(201).send(recipe);
         });
     });
+
+recipesRouter.routes("/:recipeId")
+    .get(function (req, res) {
+        Recipes.findOne({
+            _id: req.params.recipeId,
+            user: req.user
+        })
+    })
