@@ -27,3 +27,4 @@ recipesRouter.routes("/:recipeId")
             user: req.user
         })
     })
+module.exports = ("recipesRouter", recipesRouter);

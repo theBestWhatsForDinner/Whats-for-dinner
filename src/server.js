@@ -16,6 +16,7 @@ mongoose.connect(config.database, function () {
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
+app.use("/recipes", recipesRouter);
 
 app.listen(port, function () {
     console.log("I hear dead people...");
