@@ -25,6 +25,11 @@ var recipesSchema = new Schema({
     foodImg: {
         type: String,
         required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true
     }
 });
 

@@ -1,42 +1,54 @@
 //var express = require("express");
-//var todoRouter = express.Router();
-//var Todo = require("../models/todo");
+//var beenPlacesRouter = express.Router();
+//var BeenPlaces = require("../models/beenPlaces");
 //
-//todoRouter.route("/")
-//    .get(function (req, res) {
-//        Todo.find({user: req.user._id}, function (err, todos) {
-//            if (err) res.status(500).send(err);
-//            else res.send(todos);
-//        });
-//    })
-//    .post(function (req, res) {
-//        var newTodo = new Todo(req.body);
-//        newTodo.user = req.user._id;
-//
-//        newTodo.save(function (err, todo) {
-//            if (err) res.status(500).send(err);
-//            else res.status(201).send(todo);
-//        });
+//beenPlacesRouter.get("/", function (req, res) {
+//    BeenPlaces.find({
+//        user: req.user._id
+//    }, function (err, beenPlaces) {
+//        if (err) res.status(500).send(err);
+//        res.send(beenPlaces);
 //    });
+//});
 //
-//todoRouter.route("/:todoId")
-//    .get(function (req, res) {
-//        Todo.findOne({_id: req.params.todoId, user: req.user._id}, function (err, todo) {
-//            if (err) res.status(500).send(err);
-//            else res.send(todo);
-//        });
-//    })
-//    .put(function (req, res) {
-//        Todo.findOneAndUpdate({_id: req.params.todoId, user: req.user._id}, req.body, {new: true}, function(err, todo) {
-//            if (err) res.status(500).send(err);
-//            else res.send(todo);
-//        });
-//    })
-//    .delete(function (req, res) {
-//        Todo.findOneAndRemove({_id: req.params.todoId, user: req.user._id}, function(err, todo) {
-//            if (err) res.status(500).send(err);
-//            else res.send(todo);
-//        });
+//beenPlacesRouter.post("/", function (req, res) {
+//    var newBeenPlaces = new BeenPlaces(req.body);
+//    newBeenPlaces.user = req.user._id;
+//    newBeenPlaces.save(function (err, beenPlace) {
+//        if (err) res.status(500).send(err);
+//        res.send(beenPlace);
 //    });
+//});
 //
-//module.exports = todoRouter;
+//beenPlacesRouter.get("/:beenId", function (req, res) {
+//    BeenPlaces.findOne({
+//        _id: req.params.beenId,
+//        user: req.user._id
+//    }, function (err, beenPlace) {
+//        if (err) res.status(500).send(err);
+//        else res.send(beenPlace);
+//    });
+//});
+//
+//beenPlacesRouter.put("/:beenId", function (req, res) {
+//    BeenPlaces.findOneAndUpdate(req.params.beenId, req.body, {
+//        new: true
+//    }, function (err, beenPlace) {
+//        if (err) res.status(500).send(err);
+//        else res.send(beenPlace);
+//    })
+//})
+//
+//
+//module.exports = beenPlacesRouter;
+
+
+
+{
+    "title": "spaghetti",
+    "prepTime": 30,
+    "ingredients": ["noodles", "sauce"],
+    "directions": "Boil the noodles in a pot till soft, warm the sauce in a pan, mix together and enjoy",
+    "difficulty": 1,
+    "foodImg": "https://lasrecetasdemanu.files.wordpress.com/2014/02/spaghetti-bolognesa.jpg"
+}
