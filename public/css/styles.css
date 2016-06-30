@@ -1,0 +1,19 @@
+.ingredientImg {
+    height: 200px;
+    width: auto;
+}
+
+.ingredient {
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    padding: 1em;
+}
+
+.quantity {
+    width:49%;
+}
+
+.deleteIngredient {
+    width: 100%;
+}
