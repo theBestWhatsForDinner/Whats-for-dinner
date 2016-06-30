@@ -2,7 +2,7 @@ var express = require("express");
 var recipesRouter = express.Router();
 var Recipes = require("../models/recipes");
 
-recipesRouter.routes("/")
+recipesRouter.route("/")
     .get(function (req, res) {
         Recipes.find({
             user: req.user._id
@@ -20,7 +20,7 @@ recipesRouter.routes("/")
         });
     });
 
-recipesRouter.routes("/:recipeId")
+recipesRouter.route("/:recipeId")
     .get(function (req, res) {
         Recipes.findOne({
             _id: req.params.recipeId,
