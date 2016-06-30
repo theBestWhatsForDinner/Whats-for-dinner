@@ -26,5 +26,5 @@ recipesRouter.routes("/:recipeId")
             _id: req.params.recipeId,
             user: req.user
         })
-    })
+    });
 module.exports = ("recipesRouter", recipesRouter);
