@@ -1,12 +1,14 @@
 var app = angular.module("mealPlannerApp");
 
-app.controller("CalendarController", ["$scope", function ($scope, calanderService) {
+app.controller("CalendarController", ["$scope", "theService", function ($scope, theService) {
     $scope.mealsList = [];
-//    function () {
-//        calanderService.getMeals().then(function(meals) {
-//            $scope.mealsList = meals;
+    //commented untell tied in so not throw errs
+//    function PlanMeals() {
+//        theService.getRecipes().then(function(meals) {
+//            $scope.events = meals;
 //        })
-//    }();
+//    };
+//    PlanMeals();
   // ... code omitted ...
   // Dates can be passed as strings or Date objects 
   $scope.calendarOptions = {

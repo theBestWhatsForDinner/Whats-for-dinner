@@ -6,9 +6,9 @@ app.service("theService", ["$http", function ($http) {
 
     //Get all Recipes
 
-    this.getRecipes =
+    this.getRecipes = function(){
         $http.get("http://localhost:8000/recipes");
-
+    }
     //Get single Recipe
 
     this.getRecipe = function (recipeKey) {
