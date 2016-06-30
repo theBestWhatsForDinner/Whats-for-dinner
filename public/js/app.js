@@ -1,4 +1,4 @@
-var app = angular.module("mealPlannerApp", ["ngRoute", "ngAnimate"]);
+var app = angular.module("mealPlannerApp", ["ngRoute", "ngAnimate","500tech.simple-calendar"]);
 
 app.controller("indexController", ["$scope", function ($scope) {
 
