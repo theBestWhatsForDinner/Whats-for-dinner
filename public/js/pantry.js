@@ -2,7 +2,7 @@ var app = angular.module("mealPlannerApp");
 
 app.controller("PantryController", ["$scope", "theService", function ($scope, theService) {
 
-    $scope.pantry = [
+   var pantry = [
         {
             title: "Eggs",
             quantity: 12,
@@ -16,5 +16,10 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
             url: "http://bengardranch.com/wp-content/uploads/2012/03/cilantro_i.png"
         }
     ]
+    
+    
+     $scope.theService.getPantry.then(function (response) {
+        $scope.pantry = response.data;
+    });
     
 }]);

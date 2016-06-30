@@ -27,7 +27,7 @@ recipesRouter.get("/:recipeId", function (req, res) {
     }, function (err, recipe) {
         if (err) res.status(500).send(err);
         else res.send(recipe);
-    })
+    });
 });
 
 recipesRouter.put("/:recipeId", function (req, res) {
@@ -39,7 +39,7 @@ recipesRouter.put("/:recipeId", function (req, res) {
     }, function (err, recipe) {
         if (err) res.status(500).send(err);
         else res.send(recipe);
-    })
+    });
 });
 
 recipesRouter.delete("/:recipeId", function (req, res) {
@@ -49,8 +49,7 @@ recipesRouter.delete("/:recipeId", function (req, res) {
     }, function (err, recipe) {
         if (err) res.status(500).send(err);
         else res.send(recipe);
-    })
+    });
 });
 
 module.exports = recipesRouter;
-
