@@ -20,9 +20,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 app.use("/recipes", require("./routes/recipeRoutes"));
-app.get("/", function(req, res){
-    res.send("lololo");
-});
 
 app.use("/api", expressJwt({
     secret: config.secret
