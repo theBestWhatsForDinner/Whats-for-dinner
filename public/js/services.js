@@ -16,7 +16,6 @@ app.service("theService", ["$http", function ($http) {
             return $http.get(baseRecipeUrl);
         };
 
-
     //Get single Recipe
 
     this.getRecipe = function (recipeKey) {
@@ -49,7 +48,6 @@ app.service("theService", ["$http", function ($http) {
     this.getPantry = function () {
         return $http.get(basePantryUrl);
     };
-
 
     //Add Ingredient to Pantry
 

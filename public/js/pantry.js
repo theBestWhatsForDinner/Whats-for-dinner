@@ -10,19 +10,39 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
         console.log($scope.pantry);
     });
 
-    $scope.deleteIngredient = function () {
+    $scope.deleteIngredient = function (index) {
 
-        $scope.theService.deleteIngredient().then(function (response) {
+        $scope.theService.deleteIngredient(index).then(function (response) {
             $scope.pantry = response.data;
+            
 
         });
-    }
+    };
+    
+//     $scope.quantityUp = function (index) {
+//
+//        var pantry = $scope.pantry;
+//
+//        var ingredient = $scope.pantry.comments[index];
+//
+//        article.comments[index].likes++;
+//
+//        $scope.theService.putLikes(articleKey, comment, article).then(function (response) {
+//
+//        });
+//    };
+//
+//    $scope.quantityDown = function (index) {
+//
+//        var article = $scope.article;
+//
+//        var comment = $scope.article.comments[index];
+//
+//        article.comments[index].likes--;
+//
+//        $scope.theService.putLikes(articleKey, comment, article).then(function (response) {
+//
+//        });
 
-    //
-    //    (function () {
-    //        var _id = localStorage.getItem("_id");
-    //        theService.getPantry(_id).then(function (response) {
-    //            $scope.pantry = response.data;
-    //        });
-    //    }())
+ 
 }]);

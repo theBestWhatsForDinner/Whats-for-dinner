@@ -8,7 +8,7 @@
 
     <div class="row">
 
-        <div class="ingredient" ng-repeat="item in pantry">
+        <div class="ingredient" ng-repeat="item in pantry track by $index">
             <h2>{{ item.title }}</h2>
             <img class="ingredientImg" ng-src="{{ item.url }}" alt="">
             <p>Quantity: {{ item.quantity }}</p>
@@ -17,7 +17,7 @@
             <button class="btn btn-info quantity"><span class="glyphicon glyphicon-minus"></span></button>
             <br>
             <br>
-            <button class="btn btn-danger deleteIngredient"><span class="glyphicon glyphicon-trash"></span></button>
+            <button ng-click="deleteIngredient($index)" class="btn btn-danger deleteIngredient"><span class="glyphicon glyphicon-trash"></span></button>
         </div>
     </div>
 </div>
