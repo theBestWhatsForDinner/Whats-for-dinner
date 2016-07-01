@@ -42,7 +42,7 @@ app.config(function ($routeProvider) {
         })
         .when("/recipes", {
             templateUrl: "recipes.html",
-            controller: "recipesController"
+            controller: "RecipeController"
         })
         .when("/home", {
             templateUrl: "home.html",

@@ -1,7 +1,6 @@
 .ingredientImg {
     height: 200px;
     width: auto;
-
 }
 
 .ingredient {
@@ -12,7 +11,7 @@
 }
 
 .quantity {
-    width:49%;
+    width: 49%;
 }
 
 .deleteIngredient {
@@ -25,9 +24,16 @@ h2 {
 
 .imageDiv {
     height: 400px;
-
 }
 
 .titleDiv {
     height: 100px;
+}
+
+.recipes {
+    text-align: center;
+}
+
+.recipes > div > form > input {
+    margin: 10px;
 }

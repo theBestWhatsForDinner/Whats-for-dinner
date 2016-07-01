@@ -10,19 +10,14 @@ app.service("theService", ["$http", function ($http) {
 
     //Get all Recipes
 
-    this.cookBook = [];
-    var self = this;
-
     this.getRecipe = function () {
-        return $http.get(baseRecipeUrl).then(function (response) {
-            self.cookBook = response.data;
-        })
-    }
+        return $http.get(baseRecipeUrl);
+    };
+
+    //  Add recipes to Cook Book
 
     this.postRecipe = function (recipe) {
-        return $http.post(baseRecipeUrl, recipe).then(function (response) {
-            self.cookBook.push(response.data);
-        });
+        return $http.post(baseRecipeUrl, recipe);
     };
 
 
@@ -52,7 +47,7 @@ app.service("theService", ["$http", function ($http) {
     //Delete Ingredient in Pantry
 
     this.deleteIngredient = function (id) {
-        
+
 
         return $http.delete(basePantryUrl + id);
     };
