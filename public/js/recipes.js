@@ -2,7 +2,6 @@ var app = angular.module("mealPlannerApp");
 
 app.controller("RecipeController", ["$scope", "theService", function ($scope, theService) {
 
-
     $scope.theService = theService;
 
     $scope.theService.getRecipe().then(function (response) {

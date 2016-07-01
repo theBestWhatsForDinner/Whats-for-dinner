@@ -11,16 +11,13 @@ app.service("theService", ["$http", function ($http) {
     //Get all Recipes
 
     this.getRecipe = function () {
-        return $http.get(baseRecipeUrl);
+        return $http.get(baseRecipeUrl)
     };
 
-    //  Add recipes to Cook Book
 
     this.postRecipe = function (recipe) {
         return $http.post(baseRecipeUrl, recipe);
     };
-
-
 
 
     //******PANTRY******
@@ -65,4 +62,4 @@ app.service("theService", ["$http", function ($http) {
         return $http.post(baseAuthUrl + "signup", signup);
     };
 
-}]);
+            }]);

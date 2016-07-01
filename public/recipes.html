@@ -36,13 +36,13 @@
 
 <div class="row">
 
-    <div class="recipe" ng-repeat="recipe in cookBook">
-        <h2>{{ recipe.title }}</h2>
+    <div class="recipe col-lg-4" ng-repeat="recipe in cookBook">
+        <h2><u>{{ recipe.title }}</u></h2>
         <img class="recipeImg" ng-src="{{ recipe.foodImg }}" alt="">
-        <h3>{{ recipe.ingredients }}</h3>
-        <p>{{ recipe.directions }}.</p>
-        <h3>{{ recipe.prepTime }}</h3>
-        <h3>{{ recipe.difficulty }}</h3>
+        <h3><u>Ingredients:</u> {{ recipe.ingredients }}</h3>
+        <p><u><b>Directions:</b></u> {{ recipe.directions }}.</p>
+        <h3><u>Total prep time:</u> {{ recipe.prepTime }}</h3>
+        <h3><u>Difficulty to make:</u> {{ recipe.difficulty }}</h3>
 
 
     </div>
