@@ -14,7 +14,7 @@ var controller = app.controller("authController", ["$scope", "authService", "$lo
             localStorage.setItem("token", responce.token);
             // i stored the id to use in requests
             localStorage.setItem("_id", responce.user._id);
-            $location.path("/");
+            $location.path("/home");
         });
     };
     
