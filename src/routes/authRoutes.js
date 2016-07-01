@@ -53,7 +53,7 @@ authRouter.post("/signup", function (req, res) {
                 if (err) res.status(500).send(err);
                 else res.send({
                     success: true,
-                    user: user,
+                    user: user.withoutPassword(),
                     message: "Successfully created new user"
                 });
             });

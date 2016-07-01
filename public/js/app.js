@@ -30,5 +30,21 @@ app.config(function ($routeProvider) {
         .when("/", {
             templateUrl: "home.html",
             controller: "HomeController"
-        });
+        })
+        .when("/login", {
+            templateUrl: "./auth/login.html",
+            controller: "authController"
+        })
+        .when("/signup", {
+            templateUrl: "./auth/signup.html",
+            controller: "authController"
+        })
+        .when("/settings", {
+            templateUrl: "./auth/userprofile.html",
+            controller: "authController"
+        })
+        .otherwise({
+        templateUrl: "./auth/landing.html",
+        controller: "authController"
+    });
 });
