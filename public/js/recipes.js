@@ -5,16 +5,16 @@ app.controller("RecipeController", ["$scope", "theService", function ($scope, th
 
     $scope.theService = theService;
 
-    $scope.theService.getRecipes().then(function (response) {
-        $scope.recipes = response.data;
-        console.log($scope.recipes);
-    });
+    (function getRecipes() {
+        theService.getRecipe().then(function () {})
+    })();
 
-    $scope.deleteIngredient = function () {
-
-        $scope.theService.deleteRecipe().then(function (response) {
-            $scope.recipes = response.data;
-
-        });
+    $scope.postRecipes = function (recipe) {
+        theService.postRecipe(recipe).then(function () {
+            $scope.recipe = null;
+            $scope.recipes = theService.cookBook;
+        })
     }
+
+
 }]);
