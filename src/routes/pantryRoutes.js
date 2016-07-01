@@ -8,6 +8,7 @@ pantryRouter.get("/", function (req, res) {
     }, function (err, pantryItems) {
         if (err) res.status(500).send(err);
         res.send(pantryItems);
+    
     });
 });
 

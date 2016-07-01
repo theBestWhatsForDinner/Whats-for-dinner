@@ -18,7 +18,7 @@ var pantrySchema = new Schema({
         type: Boolean,
         default: false
     },
-    itemImg: {
+    url: {
         type: String
     },
     user: {
