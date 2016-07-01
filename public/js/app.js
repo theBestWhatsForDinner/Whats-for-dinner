@@ -10,6 +10,7 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
         localStorage.removeItem("token");
         localStorage.removeItem("_id");
         $location.path("/logout");
+        $scope.token = false;
     }
 
     function loggedIn() {
