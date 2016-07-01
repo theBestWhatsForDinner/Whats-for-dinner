@@ -5,7 +5,7 @@ angular.module('500tech.simple-calendar', []).directive('simpleCalendar', functi
       options: '=?',
       events: '=?'
     },
-    templateUrl: 'calendarTemplate.html',
+    templateUrl: 'directive/calendarTemplate.html',
     controller: ['$scope', function ($scope) {
       var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
       var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

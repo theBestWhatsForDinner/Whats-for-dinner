@@ -5,19 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Meal Planner</title>
+    <link rel="stylesheet" href="directive/angular-simple-calendar.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="http://pre06.deviantart.net/95fc/th/pre/f/2012/088/c/f/salad_fingers_by_tehcheychibi-d4uazpc.png">
 </head>
 
 <body ng-controller="indexController" class="container-fluid">
 
     <nav class="nav row">
-        <a class="col-xs-12 col-sm-3" href="#/recipes">Recipes</a>
-        <a class="col-xs-12 col-sm-3" href="#/pantry">Pantry</a>
-        <a class="col-xs-12 col-sm-3" href="#/calendar">Calendar</a>
-        <a href="#/signup">Sign Up</a>
+
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/">Home</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/recipes">Recipes</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/pantry">Pantry</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/calendar">Calendar</a>
+        <a class="col-xs-12 col-sm-3" ng-hide="token === true" href="#/login">LOG IN</a>
+        <a class="col-xs-12 col-sm-3" ng-hide="token === true" href="#/signup">SIGN UP</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" ng-click="logOut()" href="#/logout">LOG OUT</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/settings">YOUR ACCOUNT</a>
+
     </nav>
 
     <div class="page {{ pageClass  }}" ng-view></div>
@@ -27,8 +35,14 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
     <script src="js/app.js"></script>
     <script src="js/services.js"></script>
-    <!--    <script src="js/calendar.js"></script>-->
+    <script src="directive/angular-simple-calendar.js"></script>
+    <script src="js/calendar.js"></script>
+<!--                    front end auth js src for         -->
+    <script src="js/auth.js"></script>
+    <script src="js/authservice.js"></script>
+    <script src="js/authinterceptor.js"></script>
     <script src="js/pantry.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/recipe.js"></script>
     <script src="js/recipes.js"></script>
     <script src="js/signup.js"></script>

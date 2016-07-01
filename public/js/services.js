@@ -10,10 +10,12 @@ app.service("theService", ["$http", function ($http) {
 
     //Get all Recipes
 
+
     this.getRecipes =
         function () {
             return $http.get(baseRecipeUrl);
         };
+
 
     //Get single Recipe
 
@@ -43,9 +45,11 @@ app.service("theService", ["$http", function ($http) {
 
     //List ingredients in Pantry
 
+
     this.getPantry = function () {
         return $http.get(basePantryUrl);
     };
+
 
     //Add Ingredient to Pantry
 
