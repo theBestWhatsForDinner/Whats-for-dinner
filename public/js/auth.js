@@ -1,8 +1,8 @@
 var app = angular.module("mealPlannerApp");
 
 var controller = app.controller("authController", ["$scope", "authService", "$location", function ($scope, authService, $location) {
-    
-//    loggedIn();
+
+    //    loggedIn();
     $scope.newUser = function (user) {
         authService.signup(user).then(function (response) {
             console.log(response);
@@ -18,5 +18,5 @@ var controller = app.controller("authController", ["$scope", "authService", "$lo
             $location.path("/home");
         });
     };
-    
+
 }]);

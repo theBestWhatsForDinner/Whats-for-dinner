@@ -10,35 +10,23 @@ app.service("theService", ["$http", function ($http) {
 
     //Get all Recipes
 
+    this.cookBook = [];
+    var self = this;
 
-    this.getRecipes =
-        function () {
-            return $http.get(baseRecipeUrl);
-        };
-
-    //Get single Recipe
-
-    this.getRecipe = function (recipeKey) {
-        return $http.get(baseRecipeUrl + recipeKey);
-    };
-
-    //Add new Recipe
+    this.getRecipe = function () {
+        return $http.get(baseRecipeUrl).then(function (response) {
+            self.cookBook = response.data;
+        })
+    }
 
     this.postRecipe = function (recipe) {
-        return $http.post(baseRecipeUrl, recipe);
+        return $http.post(baseRecipeUrl, recipe).then(function (response) {
+            self.cookBook.push(response.data);
+        });
     };
 
-    //Edit Recipe
 
-    this.putRecipe = function (key, recipe) {
-        return $http.put(baseRecipeUrl + recipe._id, recipe);
-    };
 
-    //Delete Recipe
-
-    this.deleteRecipe = function (recipe) {
-        return $http.delete(baseRecipeUrl + recipe._id);
-    };
 
     //******PANTRY******
 

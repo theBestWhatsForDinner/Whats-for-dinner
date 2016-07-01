@@ -1,46 +1,29 @@
-//var express = require("express");
-//var beenPlacesRouter = express.Router();
-//var BeenPlaces = require("../models/beenPlaces");
+//var app = angular.module("mainApp");
 //
-//beenPlacesRouter.get("/", function (req, res) {
-//    BeenPlaces.find({
-//        user: req.user._id
-//    }, function (err, beenPlaces) {
-//        if (err) res.status(500).send(err);
-//        res.send(beenPlaces);
-//    });
+//
+//app.service("BeenPlacesService", function ($http) {
+//
+//    var baseUrl = "http://localhost:8000/api/been-places/";
+//    this.beenPlacesArray = [];
+//    var self = this;
+//
+//    this.getBeenPlaces = function () {
+//        return $http.get(baseUrl)
+//            .then(function (response) {
+//                self.beenPlacesArray = response.data;
+//            });
+//
+//    };
+//
+//    this.postBeenPlaces = function (beenPlace) {
+//        return $http.post(baseUrl, beenPlace)
+//            .then(function (response) {
+//                self.beenPlacesArray.push(response.data);
+//            });
+//    };
 //});
-//
-//beenPlacesRouter.post("/", function (req, res) {
-//    var newBeenPlaces = new BeenPlaces(req.body);
-//    newBeenPlaces.user = req.user._id;
-//    newBeenPlaces.save(function (err, beenPlace) {
-//        if (err) res.status(500).send(err);
-//        res.send(beenPlace);
-//    });
-//});
-//
-//beenPlacesRouter.get("/:beenId", function (req, res) {
-//    BeenPlaces.findOne({
-//        _id: req.params.beenId,
-//        user: req.user._id
-//    }, function (err, beenPlace) {
-//        if (err) res.status(500).send(err);
-//        else res.send(beenPlace);
-//    });
-//});
-//
-//beenPlacesRouter.put("/:beenId", function (req, res) {
-//    BeenPlaces.findOneAndUpdate(req.params.beenId, req.body, {
-//        new: true
-//    }, function (err, beenPlace) {
-//        if (err) res.status(500).send(err);
-//        else res.send(beenPlace);
-//    })
-//})
-//
-//
-//module.exports = beenPlacesRouter;
+
+
 
 
 
