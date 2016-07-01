@@ -11,7 +11,6 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
         localStorage.removeItem("_id");
         $location.path("/logout");
         $scope.token = false;
-    }
     };
 
     function loggedIn() {
@@ -26,18 +25,9 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
 
 }]);
 
-
 app.config(function ($routeProvider) {
 
     $routeProvider
-        .when("/signup", {
-            templateUrl: "signup.html",
-            controller: "SignupController"
-        })
-        .when("/login", {
-            templateUrl: "login.html",
-            controller: "LoginController"
-        })
         .when("/pantry", {
             templateUrl: "pantry.html",
             controller: "PantryController"
