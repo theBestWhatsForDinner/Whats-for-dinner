@@ -1,13 +1,14 @@
 .ingredientImg {
     height: 200px;
     width: auto;
+
 }
 
 .ingredient {
     display: inline-block;
-    height: 300px;
-    width: 300px;
+    height: 500px;
     padding: 1em;
+    text-align: center;
 }
 
 .quantity {
@@ -16,4 +17,17 @@
 
 .deleteIngredient {
     width: 100%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.imageDiv {
+    height: 400px;
+
+}
+
+.titleDiv {
+    height: 100px;
 }

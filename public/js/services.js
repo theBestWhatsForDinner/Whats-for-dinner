@@ -58,13 +58,15 @@ app.service("theService", ["$http", function ($http) {
     //Change Ingredient Quantity
 
     this.putIngredient = function (key, ingredient) {
-        return $http.put(basePantryUrl + ingredient._id, ingredient);
+        return $http.put(basePantryUrl + key, ingredient);
     };
 
     //Delete Ingredient in Pantry
 
-    this.deleteIngredient = function (ingredient) {
-        return $http.delete(basePantryUrl + ingredient._id);
+    this.deleteIngredient = function (id) {
+        
+
+        return $http.delete(basePantryUrl + id);
     };
 
     //******CALENDAR******
