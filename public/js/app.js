@@ -12,6 +12,7 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
         $location.path("/logout");
         $scope.token = false;
     }
+    };
 
     function loggedIn() {
         var token = localStorage.getItem("token");
@@ -20,14 +21,23 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
         } else {
             $scope.token = false;
         }
-    };
+    }
     loggedIn();
 
-                                   }]);
+}]);
+
 
 app.config(function ($routeProvider) {
 
     $routeProvider
+        .when("/signup", {
+            templateUrl: "signup.html",
+            controller: "SignupController"
+        })
+        .when("/login", {
+            templateUrl: "login.html",
+            controller: "LoginController"
+        })
         .when("/pantry", {
             templateUrl: "pantry.html",
             controller: "PantryController"
@@ -44,7 +54,7 @@ app.config(function ($routeProvider) {
             templateUrl: "recipes.html",
             controller: "recipesController"
         })
-        .when("/", {
+        .when("/home", {
             templateUrl: "home.html",
             controller: "HomeController"
         })
