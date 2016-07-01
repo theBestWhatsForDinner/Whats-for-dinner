@@ -31,3 +31,7 @@ h2 {
 .titleDiv {
     height: 100px;
 }
+
+.dateInput {
+    color: darkgray;
+}

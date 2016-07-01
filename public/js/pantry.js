@@ -52,3 +52,23 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
 
     };
 }]);
+
+app.filter('expirationFilter', function () {
+
+    // Create the return function
+    // set the required parameter name to **number**
+    return function (expiration) {
+
+        //        var totalSec = totalTime;
+
+        var today = new Date;
+        
+        console.log(today);
+        console.log(expiration);
+
+        var countdown = today - expiration;
+
+        return countdown;
+
+    }
+});
