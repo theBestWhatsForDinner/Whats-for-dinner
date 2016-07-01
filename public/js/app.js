@@ -1,16 +1,23 @@
-var app = angular.module("mealPlannerApp", ["ngRoute", "ngAnimate","500tech.simple-calendar"]);
+var app = angular.module("mealPlannerApp", ["ngRoute", "ngAnimate"]);
 
 app.controller("indexController", ["$scope", function ($scope) {
 
     $scope.scroll = function () {
         window.scroll(0, 0);
     };
-
 }]);
 
 app.config(function ($routeProvider) {
 
     $routeProvider
+        .when("/signup", {
+            templateUrl: "signup.html",
+            controller: "SignupController"
+        })
+        .when("/login", {
+            templateUrl: "login.html",
+            controller: "LoginController"
+        })
         .when("/pantry", {
             templateUrl: "pantry.html",
             controller: "PantryController"

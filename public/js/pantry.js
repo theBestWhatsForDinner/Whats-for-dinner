@@ -4,6 +4,17 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
 
     $scope.theService = theService;
 
+    $scope.theService.getPantry.then(function (response) {
+        $scope.pantry = response.data;
+    });
+    $scope.theService.deleteIngredient().then(function (response) {
+        $scope.pantry = response.data;
+    });
+}]);
+
+
+
+
     //   var pantry = [
     //        {
     //            title: "Eggs",
@@ -18,11 +29,3 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
     //            url: "http://bengardranch.com/wp-content/uploads/2012/03/cilantro_i.png"
     //        }
     //    ]
-
-    $scope.theService.getPantry.then(function (response) {
-        $scope.pantry = response.data;
-    });
-    $scope.theService.deleteIngredient(ingredient).then(function (response) {
-        $scope.pantry = response.data;
-    });
-}]);
