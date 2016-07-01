@@ -1,7 +1,7 @@
-.ingredientImg {
+.ingredientImg,
+.recipeImg {
     height: 200px;
     width: auto;
-
 }
 
 .ingredient {
@@ -12,7 +12,7 @@
 }
 
 .quantity {
-    width:49%;
+    width: 49%;
 }
 
 .deleteIngredient {
@@ -25,7 +25,6 @@ h2 {
 
 .imageDiv {
     height: 400px;
-
 }
 
 .titleDiv {
@@ -34,4 +33,17 @@ h2 {
 
 .dateInput {
     color: darkgray;
+}
+
+.recipes {
+    text-align: center;
+}
+
+.recipes > div > form > input {
+    margin: 10px;
+}
+
+.git recipe {
+    text-align: center;
+    border: solid black 2px;
 }

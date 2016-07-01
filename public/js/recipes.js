@@ -2,17 +2,16 @@ var app = angular.module("mealPlannerApp");
 
 app.controller("RecipeController", ["$scope", "theService", function ($scope, theService) {
 
-
     $scope.theService = theService;
 
-    (function getRecipes() {
-        theService.getRecipe().then(function () {})
-    })();
+    $scope.theService.getRecipe().then(function (response) {
+        $scope.cookBook = response.data;
+    });
 
-    $scope.postRecipes = function (recipe) {
-        theService.postRecipe(recipe).then(function () {
+    $scope.postRecipes = function () {
+        $scope.theService.postRecipe($scope.recipe).then(function (response) {
+            $scope.cookBook.push(response.data);
             $scope.recipe = null;
-            $scope.recipes = theService.cookBook;
         })
     }
 
