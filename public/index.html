@@ -19,14 +19,14 @@
 <body ng-controller="indexController" class="container-fluid">
 
     <nav class="nav row">
-        <a class="col-xs-12 col-sm-3" href="#/">Home</a>
-        <a class="col-xs-12 col-sm-3" href="#/recipes">Recipes</a>
-        <a class="col-xs-12 col-sm-3" href="#/pantry">Pantry</a>
-        <a class="col-xs-12 col-sm-3" href="#/calendar">Calendar</a>
-        <a class="col-xs-12 col-sm-3" ng-hide="token" href="#/login">LOG IN</a>
-        <a class="col-xs-12 col-sm-3" ng-hide="token" href="#/signup">SIGN UP</a>
-        <a class="col-xs-12 col-sm-3" ng-hide="token" href="#/logout">LOG OUT</a>
-        <a class="col-xs-12 col-sm-3" ng-hide="token" href="#/settings">YOUR ACCOUNT</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/">Home</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/recipes">Recipes</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/pantry">Pantry</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/calendar">Calendar</a>
+        <a class="col-xs-12 col-sm-3" ng-hide="token === true" href="#/login">LOG IN</a>
+        <a class="col-xs-12 col-sm-3" ng-hide="token === true" href="#/signup">SIGN UP</a>
+        <a class="col-xs-12 col-sm-3" ng-hide="token === true" ng-click="logOut()" href="#/logout">LOG OUT</a>
+        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/settings">YOUR ACCOUNT</a>
     </nav>
 
     <div class="page {{ pageClass  }}" ng-view></div>
@@ -43,6 +43,7 @@
     <script src="js/auth.js"></script>
     <script src="js/authservice.js"></script>
     <script src="js/pantry.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/recipe.js"></script>
     <script src="js/recipes.js"></script>
 </body>

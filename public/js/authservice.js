@@ -14,9 +14,16 @@ app.service("authService", ["$http", function ($http) {
         })
     }
     this.getToken = function() {
-        return localStorage.getItem(token);
+//        var token = localStorage.getItem(token);
+        return("yep");
+        console.log(token);
+//        if (token === null) {
+//            return "nope"
+//        }
+//        return token;
     }
     this.removeToken = function() {
-        
+        localStorage.removeItem("token");
+        localStorage.removeItem("_id");
     }
 }])
