@@ -20,6 +20,8 @@ pantryRouter.post("/", function (req, res) {
     });
 });
 
+// ==================================================== //
+
 pantryRouter.get("/:pantryId", function (req, res) {
     PantryItems.findOne({
         _id: req.params.pantryId,
