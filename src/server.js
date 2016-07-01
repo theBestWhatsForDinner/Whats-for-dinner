@@ -25,9 +25,9 @@ app.use("/api", expressJwt({
     secret: config.secret
 }));
 
-app.use("/home", expressJwt({
-    secret: config.secret
-}));
+//app.use("/home", expressJwt({
+//    secret: config.secret
+//}));
 
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/api/recipes", require("./routes/recipeRoutes"));
