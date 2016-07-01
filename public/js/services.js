@@ -37,9 +37,9 @@ app.service("theService", ["$http", function ($http) {
 
     //List ingredients in Pantry
 
-    this.getPantry =
-        $http.get("http://localhost:8000/pantry");
-
+    this.getPantry = function(_id) {
+       return $http.get("http://localhost:8000/api/pantry", _id);
+    };
     //Add Ingredient to Pantry
 
     this.postIngredient = function (ingredient) {

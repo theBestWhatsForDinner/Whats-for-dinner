@@ -10,7 +10,7 @@
 
         <div class="ingredient" ng-repeat="item in pantry">
             <h2>{{ item.title }}</h2>
-            <img class="ingredientImg" src="{{ item.url }}" alt="">
+            <img class="ingredientImg" ng-src="{{ item.url }}" alt="">
             <p>Quantity: {{ item.quantity }}</p>
             <p>Expires in {{ item.expiration }} days.</p>
             <button class="btn btn-info quantity"><span class="glyphicon glyphicon-plus"></span></button>

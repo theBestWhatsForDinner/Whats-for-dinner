@@ -17,9 +17,12 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
         }
     ]
     
-    
-     $scope.theService.getPantry.then(function (response) {
+    (function(){
+        var _id = localStorage.getItem("_id");
+       theService.getPantry(_id).then(function (response) {
         $scope.pantry = response.data;
-    });
+    });  
+    }())
+    
     
 }]);
