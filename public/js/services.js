@@ -11,8 +11,10 @@ app.service("theService", ["$http", function ($http) {
     //Get all Recipes
 
     this.getRecipe = function () {
-        return $http.get(baseRecipeUrl)
+        return $http.get(baseRecipeUrl);
     };
+
+    // Add recipes to cook book
 
 
     this.postRecipe = function (recipe) {

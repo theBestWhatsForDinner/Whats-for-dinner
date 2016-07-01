@@ -7,7 +7,7 @@
 
             <input placeholder="Recipe name" type="text" ng-model="recipe.title">
             <br>
-            <input placeholder="Total Prep time" type="number" ng-model="recipe.prepTime">
+            <input placeholder="Total Prep time in minutes" type="number" ng-model="recipe.prepTime">
             <br>
             <input placeholder="Ingredients" type="text" ng-model="recipe.ingredients">
             <br>
@@ -41,7 +41,7 @@
         <img class="recipeImg" ng-src="{{ recipe.foodImg }}" alt="">
         <h3><u>Ingredients:</u> {{ recipe.ingredients }}</h3>
         <p><u><b>Directions:</b></u> {{ recipe.directions }}.</p>
-        <h3><u>Total prep time:</u> {{ recipe.prepTime }}</h3>
+        <h3><u>Total prep time:</u> {{ recipe.prepTime }} minutes</h3>
         <h3><u>Difficulty to make:</u> {{ recipe.difficulty }}</h3>
 
 

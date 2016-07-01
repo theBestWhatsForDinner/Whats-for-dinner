@@ -8,8 +8,9 @@ app.controller("RecipeController", ["$scope", "theService", function ($scope, th
         $scope.cookBook = response.data;
     });
 
-    $scope.postRecipes = function (recipe) {
-        theService.postRecipe(recipe).then(function () {
+    $scope.postRecipes = function () {
+        $scope.theService.postRecipe($scope.recipe).then(function (response) {
+            $scope.cookBook.push(response.data);
             $scope.recipe = null;
         })
     }
