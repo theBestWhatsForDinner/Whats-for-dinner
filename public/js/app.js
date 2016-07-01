@@ -12,7 +12,7 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
         $location.path("/logout");
         $scope.token = false;
     }
-    };
+    
 
     function loggedIn() {
         var token = localStorage.getItem("token");
