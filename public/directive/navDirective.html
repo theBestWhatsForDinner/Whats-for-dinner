@@ -1,0 +1,10 @@
+<nav class="nav row">
+    <a class="col-xs-12 col-sm-3" ng-show="loggedIn()" href="#/">Home</a>
+    <a class="col-xs-12 col-sm-3" ng-show="loggedIn()" href="#/recipes">Recipes</a>
+    <a class="col-xs-12 col-sm-3" ng-show="loggedIn()" href="#/pantry">Pantry</a>
+    <a class="col-xs-12 col-sm-3" ng-show="loggedIn()" href="#/calendar">Calendar</a>
+    <a class="col-xs-12 col-sm-3" ng-hide="loggedIn()" href="#/login">LOG IN</a>
+    <a class="col-xs-12 col-sm-3" ng-hide="loggedIn()" href="#/signup">SIGN UP</a>
+    <a class="col-xs-12 col-sm-3" ng-show="loggedIn()" ng-click="logOut()" href="#/logout">LOG OUT</a>
+    <a class="col-xs-12 col-sm-3" ng-show="loggedIn()" href="#/settings">YOUR ACCOUNT</a>
+</nav>

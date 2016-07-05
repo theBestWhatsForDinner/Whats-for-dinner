@@ -10,36 +10,23 @@ app.service("theService", ["$http", function ($http) {
 
     //Get all Recipes
 
-
-    this.getRecipes =
-        function () {
-            return $http.get(baseRecipeUrl);
-        };
-
-
-    //Get single Recipe
-
-    this.getRecipe = function (recipeKey) {
-        return $http.get(baseRecipeUrl + recipeKey);
+    this.getRecipe = function () {
+        return $http.get(baseRecipeUrl);
     };
 
-    //Add new Recipe
+    // Add recipes to cook book
+
 
     this.postRecipe = function (recipe) {
         return $http.post(baseRecipeUrl, recipe);
     };
 
-    //Edit Recipe
-
-    this.putRecipe = function (key, recipe) {
-        return $http.put(baseRecipeUrl + recipe._id, recipe);
-    };
-
-    //Delete Recipe
-
-    this.deleteRecipe = function (recipe) {
-        return $http.delete(baseRecipeUrl + recipe._id);
-    };
+    this.getRecipeId = function (recipeId) {
+        var recipe = {};
+        return $http.get(baseRecipeUrl + recipeId).then(function (response) {
+            return recipe;
+        });
+    }
 
     //******PANTRY******
 
@@ -50,7 +37,6 @@ app.service("theService", ["$http", function ($http) {
         return $http.get(basePantryUrl);
     };
 
-
     //Add Ingredient to Pantry
 
     this.postIngredient = function (ingredient) {
@@ -60,13 +46,15 @@ app.service("theService", ["$http", function ($http) {
     //Change Ingredient Quantity
 
     this.putIngredient = function (key, ingredient) {
-        return $http.put(basePantryUrl + ingredient._id, ingredient);
+        return $http.put(basePantryUrl + key, ingredient);
     };
 
     //Delete Ingredient in Pantry
 
-    this.deleteIngredient = function (ingredient) {
-        return $http.delete(basePantryUrl + ingredient._id);
+    this.deleteIngredient = function (id) {
+
+
+        return $http.delete(basePantryUrl + id);
     };
 
     //******CALENDAR******
@@ -82,4 +70,4 @@ app.service("theService", ["$http", function ($http) {
         return $http.post(baseAuthUrl + "signup", signup);
     };
 
-}]);
+            }]);

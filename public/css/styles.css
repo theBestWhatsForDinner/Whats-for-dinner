@@ -1,19 +1,73 @@
-.ingredientImg {
+* {
+    font-family: 'Architects Daughter', cursive;
+}
+
+.ingredientImg,
+.recipeImg {
     height: 200px;
     width: auto;
 }
 
 .ingredient {
     display: inline-block;
-    height: 300px;
-    width: 300px;
+    height: 550px;
     padding: 1em;
+    text-align: center;
+    background-color: rgba(225, 225, 225, .5);
+    border: solid white;
+    outline: double white 10px;
+    margin: 10px;
+    padding: 5px;
+    margin-left: 6%;
 }
 
 .quantity {
-    width:49%;
+    width: 49%;
 }
 
 .deleteIngredient {
     width: 100%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.imageDiv {
+    height: 400px;
+}
+
+.titleDiv {
+    height: 100px;
+}
+
+.dateInput {
+    color: darkgray;
+}
+
+.recipes {
+    text-align: center;
+}
+
+.recipes > div > form > input {
+    margin: 10px;
+}
+
+.recipe {
+    background-color: rgba(225, 225, 225, .5);
+    height: 500px;
+}
+
+.recipe {
+    text-align: center;
+    background-color: rgba(225, 225, 225, .5);
+    border: solid white;
+    outline: double white 10px;
+    margin: 10px;
+    margin-left: 6%;
+    padding: 5px;
+}
+
+.home {
+    margin-top: 100px;
 }
