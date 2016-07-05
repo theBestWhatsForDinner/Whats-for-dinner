@@ -3,8 +3,8 @@
 }
 
 body {
-    padding-top: 80px;
-    padding-bottom: 25px;
+    padding-top: 160px;
+    padding-bottom: 35px;
 }
 
 .ingredientImg,
@@ -40,6 +40,7 @@ body {
 .nav > ul > li {
     list-style: none;
     display: inline-block;
+    font-size: 20px;
 }
 
 .quantity {
@@ -94,4 +95,45 @@ h2 {
 
 .home {
     margin-top: 100px;
+    text-align: center;
+    margin: 20px;
+}
+
+.homeHead {
+    text-align: center;
+    background-color: rgba(225, 225, 225, .5);
+}
+
+.homeButtons {
+    margin: 10px;
+}
+
+.navH {
+    text-align: right;
+    margin-right: 100px;
+}
+
+.homeImg {
+    height: 50px;
+    padding-bottom: 10px;
+}
+
+.headImg {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.reverseHeadImg {
+    height: 80px;
+    transform: rotateY(180deg);
+    margin-bottom: 20px;
+}
+
+.loginDiv {
+    text-align: center;
+}
+
+.loginDiv > section > form > input {
+    border-radius: 25px;
+    font-size: 20px
 }
