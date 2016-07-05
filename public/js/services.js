@@ -21,6 +21,12 @@ app.service("theService", ["$http", function ($http) {
         return $http.post(baseRecipeUrl, recipe);
     };
 
+    this.getRecipeId = function (recipeId) {
+        var recipe = {};
+        return $http.get(baseRecipeUrl + recipeId).then(function (response) {
+            return recipe;
+        });
+    }
 
     //******PANTRY******
 
