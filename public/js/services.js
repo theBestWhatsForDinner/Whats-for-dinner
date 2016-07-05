@@ -59,6 +59,17 @@ app.service("theService", ["$http", function ($http) {
 
     //******CALENDAR******
 
+    this.getTitle = function () {
+        return $http.get(baseRecipeUrl).then(function (responce) {
+            var list = responce.data;
+            var titleList = [];
+            var length = list.length;
+            for (var i = 0; i < length; i++) {
+                titleList.push(list[i].title);
+            };
+            return titleList;
+        })
+    };
 
     //******AUTH******
 
