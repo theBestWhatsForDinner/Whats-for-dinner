@@ -1,3 +1,7 @@
+* {
+    font-family: 'Architects Daughter', cursive;
+}
+
 .ingredientImg,
 .recipeImg {
     height: 200px;
@@ -43,7 +47,16 @@ h2 {
     margin: 10px;
 }
 
-.git recipe {
+.recipe {
+    background-color: rgba(225, 225, 225, .5);
+    height: 500px;
+}
+
+.recipe {
     text-align: center;
     border: solid black 2px;
+}
+
+.home {
+    margin-top: 100px;
 }
