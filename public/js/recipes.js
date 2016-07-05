@@ -1,6 +1,6 @@
 var app = angular.module("mealPlannerApp");
 
-app.controller("RecipeController", ["$scope", "theService", function ($scope, theService) {
+app.controller("RecipeController", ["$scope", "theService", "$routeParams", function ($scope, theService, $routeParams) {
 
     $scope.theService = theService;
 
@@ -14,6 +14,10 @@ app.controller("RecipeController", ["$scope", "theService", function ($scope, th
             $scope.recipe = null;
         })
     }
+
+    $scope.theService.getRecipeId($routeParams.recipeId).then(function (recipe) {
+        $scope.recipe = recipe;
+    });
 
 
 }]);
