@@ -35,7 +35,7 @@
 </div>
 
 <div class="row">
-    <div class="recipe col-lg-3" ng-repeat="recipe in cookBook">
+    <div class="recipe col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="recipe in cookBook">
         <h2><u>{{ recipe.title }}</u></h2>
         <a ng-click="getRecipeId($routeParams.recipeId)" href="#/recipes/:{{ recipeId }}"><img class="recipeImg" ng-src="{{ recipe.foodImg }}" alt=""></a>
         <h3><u>Ingredients:</u> {{ recipe.ingredients }}</h3>
