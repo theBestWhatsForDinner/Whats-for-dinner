@@ -1,9 +1,9 @@
 <div class="recipes row">
     <div class="col-lg-4 col-lg-offset-4">
 
-        <h1>Add a recipe!</h1>
-
         <form class="well">
+
+            <h1>Add a recipe!</h1>
 
             <input placeholder="Recipe name" type="text" ng-model="recipe.title">
             <br>
@@ -35,15 +35,12 @@
 </div>
 
 <div class="row">
-
-    <div class="recipe col-lg-4" ng-repeat="recipe in cookBook">
+    <div class="recipe col-lg-3" ng-repeat="recipe in cookBook track by $index">
         <h2><u>{{ recipe.title }}</u></h2>
-        <img class="recipeImg" ng-src="{{ recipe.foodImg }}" alt="">
+        <a href="#/recipes/:{{ recipe.index }}"><img class="recipeImg" ng-src="{{ recipe.foodImg }}" alt=""></a>
         <h3><u>Ingredients:</u> {{ recipe.ingredients }}</h3>
         <p><u><b>Directions:</b></u> {{ recipe.directions }}.</p>
         <h3><u>Total prep time:</u> {{ recipe.prepTime }} minutes</h3>
         <h3><u>Difficulty to make:</u> {{ recipe.difficulty }}</h3>
-
-
     </div>
 </div>
