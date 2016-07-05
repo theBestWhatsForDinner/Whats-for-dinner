@@ -10,7 +10,8 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
         localStorage.removeItem("token");
         localStorage.removeItem("_id");
         $location.path("/logout");
-    }
+        $scope.token = false;
+    };
 
     function loggedIn() {
         var token = localStorage.getItem("token");
@@ -19,10 +20,10 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
         } else {
             $scope.token = false;
         }
-    };
+    }
     loggedIn();
 
-                                   }]);
+}]);
 
 app.config(function ($routeProvider) {
 
@@ -41,9 +42,9 @@ app.config(function ($routeProvider) {
         })
         .when("/recipes", {
             templateUrl: "recipes.html",
-            controller: "recipesController"
+            controller: "RecipeController"
         })
-        .when("/", {
+        .when("/home", {
             templateUrl: "home.html",
             controller: "HomeController"
         })

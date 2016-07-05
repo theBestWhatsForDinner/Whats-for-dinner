@@ -4,10 +4,11 @@ var PantryItems = require("../models/pantry");
 
 pantryRouter.get("/", function (req, res) {
     PantryItems.find({
-        user: req._id
+        user: req.user._id
     }, function (err, pantryItems) {
         if (err) res.status(500).send(err);
         res.send(pantryItems);
+    
     });
 });
 
@@ -19,6 +20,8 @@ pantryRouter.post("/", function (req, res) {
         res.send(pantryItem);
     });
 });
+
+// ==================================================== //
 
 pantryRouter.get("/:pantryId", function (req, res) {
     PantryItems.findOne({

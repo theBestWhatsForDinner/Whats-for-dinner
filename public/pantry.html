@@ -1,23 +1,26 @@
-<div class="pantry">
+<input ng-model="ingredient.title" placeholder="Food Item..." type="text">
 
-    <input placeholder="Food Item..." type="text">
-    <input placeholder="Quantity..." type="number">
-    <input placeholder="Days until Expiration..." type="number">
-    <input placeholder="Image Url..." type="text">
-    <button>Add Food Item</button>
+<input ng-model="ingredient.quantity" placeholder="Quantity..." type="number">
+<input class="dateInput" ng-model="ingredient.expiration"  type="date">
+<input ng-model="ingredient.url" placeholder="Image Url..." type="text">
+<button ng-click="addIngredient()">Add Food Item</button>
 
-    <div class="row">
+<div class="row">
 
-        <div class="ingredient" ng-repeat="item in pantry">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ingredient" ng-repeat="item in pantry | orderBy:'expiration' track by $index">
+        <div class="titleDiv">
             <h2>{{ item.title }}</h2>
+        </div>
+        <div class="imageDiv">
             <img class="ingredientImg" ng-src="{{ item.url }}" alt="">
             <p>Quantity: {{ item.quantity }}</p>
-            <p>Expires in {{ item.expiration }} days.</p>
-            <button class="btn btn-info quantity"><span class="glyphicon glyphicon-plus"></span></button>
-            <button class="btn btn-info quantity"><span class="glyphicon glyphicon-minus"></span></button>
+            <p>Expires in {{ item.expiration | expirationFilter }} days.</p>
+            <button ng-click="quantityUp($index)" class="btn btn-info quantity"><span class="glyphicon glyphicon-plus"></span></button>
+            <button ng-click="quantityDown($index)" class="btn btn-info quantity"><span class="glyphicon glyphicon-minus"></span></button>
             <br>
             <br>
-            <button class="btn btn-danger deleteIngredient"><span class="glyphicon glyphicon-trash"></span></button>
+            <h1></h1>
+            <button ng-click="deleteIngredient(item._id, $index)" class="btn btn-danger deleteIngredient"><span class="glyphicon glyphicon-trash"></span></button>
         </div>
     </div>
 </div>

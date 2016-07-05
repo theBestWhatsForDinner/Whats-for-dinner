@@ -1,19 +1,49 @@
-.ingredientImg {
+.ingredientImg,
+.recipeImg {
     height: 200px;
     width: auto;
 }
 
 .ingredient {
     display: inline-block;
-    height: 300px;
-    width: 300px;
+    height: 500px;
     padding: 1em;
+    text-align: center;
 }
 
 .quantity {
-    width:49%;
+    width: 49%;
 }
 
 .deleteIngredient {
     width: 100%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.imageDiv {
+    height: 400px;
+}
+
+.titleDiv {
+    height: 100px;
+}
+
+.dateInput {
+    color: darkgray;
+}
+
+.recipes {
+    text-align: center;
+}
+
+.recipes > div > form > input {
+    margin: 10px;
+}
+
+.git recipe {
+    text-align: center;
+    border: solid black 2px;
 }
