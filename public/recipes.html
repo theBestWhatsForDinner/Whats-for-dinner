@@ -1,0 +1,46 @@
+<div class="recipes row">
+    <div class="col-lg-4 col-lg-offset-4">
+
+        <form class="well">
+
+            <h1>Add a recipe!</h1>
+
+            <input placeholder="Recipe name" type="text" ng-model="recipe.title">
+            <br>
+            <input placeholder="Total Prep time in minutes" type="number" ng-model="recipe.prepTime">
+            <br>
+            <input placeholder="Ingredients" type="text" ng-model="recipe.ingredients">
+            <br>
+            <textarea placeholder="Directions" ng-model="recipe.directions"></textarea>
+            <br>
+            <label>Difficulty</label>
+            <br>
+            <input type="radio" ng-model="recipe.difficulty" value="1">
+            <label for="difficult">1 (Easy)</label>
+            <input type="radio" ng-model="recipe.difficulty" value="2">
+            <label for="difficult">2</label>
+            <input type="radio" ng-model="recipe.difficulty" value="3">
+            <label for="difficult">3</label>
+            <input type="radio" ng-model="recipe.difficulty" value="4">
+            <label for="difficult">4</label>
+            <input type="radio" ng-model="recipe.difficulty" value="5">
+            <label for="difficult">5 (Difficult)</label>
+            <br>
+            <input type="text" placeholder="Meal image" ng-model="recipe.foodImg">
+            <br>
+            <button class="btn btn-lg btn-default" ng-click="postRecipes(recipe)">Add Food Item</button>
+
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="recipe col-lg-3" ng-repeat="recipe in cookBook track by $index">
+        <h2><u>{{ recipe.title }}</u></h2>
+        <a href="#/recipes/:{{ recipe.index }}"><img class="recipeImg" ng-src="{{ recipe.foodImg }}" alt=""></a>
+        <h3><u>Ingredients:</u> {{ recipe.ingredients }}</h3>
+        <p><u><b>Directions:</b></u> {{ recipe.directions }}.</p>
+        <h3><u>Total prep time:</u> {{ recipe.prepTime }} minutes</h3>
+        <h3><u>Difficulty to make:</u> {{ recipe.difficulty }}</h3>
+    </div>
+</div>

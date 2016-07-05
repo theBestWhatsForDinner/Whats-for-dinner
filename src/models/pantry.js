@@ -11,14 +11,14 @@ var pantrySchema = new Schema({
         required: true
     },
     expiration: {
-        type: Number,
+        type: Date,
         required: true
     },
     expiringSoong: {
         type: Boolean,
         default: false
     },
-    itemImg: {
+    url: {
         type: String
     },
     user: {
