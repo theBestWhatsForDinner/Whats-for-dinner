@@ -47,7 +47,7 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
 
     $scope.quantityDown = function (item) {
 
-    var ingredientIndex = $scope.pantry.indexOf(item)
+        var ingredientIndex = $scope.pantry.indexOf(item)
 
         var ingredient = $scope.pantry[ingredientIndex];
 
@@ -72,5 +72,11 @@ app.filter('expirationFilter', function () {
 
         return countdown;
 
+    }
+});
+
+app.filter('capitalize', function () {
+    return function (input) {
+        return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
     }
 });

@@ -6,6 +6,7 @@ var cors = require("cors");
 var morgan = require("morgan");
 var config = require("./config");
 var port = process.env.PORT || 8000;
+var path = require("path");
 var recipesSchema = require("./models/recipes");
 var expressJwt = require("express-jwt");
 
@@ -14,12 +15,13 @@ mongoose.connect(config.database, function () {
 });
 // this will console log only if connected to mongodb
 mongoose.connection.on("connected", function () {
-    console.log("conected to mongod");
+    console.log("pop goes the wesel");
 });
 
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "..", "public")));
 app.use("/recipes", require("./routes/recipeRoutes"));
 
 app.use("/api", expressJwt({
@@ -32,7 +34,8 @@ app.use("/api", expressJwt({
 
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/api/recipes", require("./routes/recipeRoutes"));
-app.use("/api/pantry", require("./routes/pantryRoutes"))
+app.use("/api/pantry", require("./routes/pantryRoutes"));
+app.use("/api/events", require("./routes/eventRoutes"));
 
 app.listen(port, function () {
     console.log("I hear dead people..." + port);

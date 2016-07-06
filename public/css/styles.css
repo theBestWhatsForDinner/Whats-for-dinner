@@ -96,12 +96,7 @@ h2 {
 
 .homeHead {
     text-align: center;
-<<<<<<< HEAD
     border: solid black 2px;
-}
-
-=======
-    background-color: rgba(225, 225, 225, .5);
 }
 
 .homeButtons {
@@ -148,9 +143,20 @@ h2 {
 }
 
 hr {
-    height: 12px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px black;
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+
+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
 }
 
 .myRecipeImg {
@@ -165,4 +171,46 @@ hr {
     background-color: rgba(225, 225, 225, .5);
     text-align: center;
 }
->>>>>>> 54a4ed2e957d6a30dd85a73c4f08dc938b7fdd41
+
+
+.goBackA {
+    margin-bottom: 10px;
+}
+
+.randomBtn {
+    text-align: center;
+}
+
+.signUp {
+    text-align: center;
+}
+
+.userProfile {
+    background-color: rgba(225, 225, 225, .8);
+    height: 500px;
+}
+
+.userProfile > div > div > h1 {
+    font-size: 60px;
+}
+
+.userProfile > div > div > h3 {
+    font-size: 40px;
+}
+
+.head {
+    text-align: center;
+}
+
+.profileImg {
+    height: 300px;
+    margin-top: -400px;
+    border: solid black;
+    outline: double black 5px;
+    padding: 10px;
+}
+
+.skillImg {
+    height: 150px;
+}
+

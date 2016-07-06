@@ -1,114 +1,161 @@
 simple-calendar * {
-  user-select: none;
+    user-select: none;
 }
 
-simple-calendar .calendar{
-  padding: 0;
-  border: 1px solid #dddddd;
-  user-select: none;
-  background-color: #fff;
+simple-calendar .calendar {
+    padding: 15px;
+    border: 1px solid #dddddd;
+    user-select: none;
+    /*    background-color: #fff;*/
 }
 
-simple-calendar .move-month {
-  cursor: pointer;
+.calBtn {
+    border-radius: 15px;
+    background-color: #999;
 }
 
 simple-calendar .prev-month {
-  float: left;
+    float: left;
+    margin-bottom: 800px;
 }
 
 simple-calendar .next-month {
-  float: right;
+    float: right;
+    /*    margin-bottom: 20px;*/
 }
 
 simple-calendar .current-month {
-  text-align: center;
-  padding: 20px 8px;
+    text-align: center;
+    height: 70px;
+    padding: 10px;
+    background-color: rgba(225, 225, 225, .8);
+    font-size: 30px;
 }
 
+
 /* *********************** */
+
+
 /* START Week CSS Settings */
+
+
 /* *********************** */
 
 simple-calendar .week {
-  height: 55px;
+    height: 55px;
+    background-color: #fff;
+    height: 150px;
 }
 
 simple-calendar .week:last-child .day {
-	height: inherit;
-	overflow:hidden;
-  border-bottom: 1px solid #dddddd;
+    height: inherit;
+    overflow: hidden;
+    border-bottom: 1px solid #dddddd;
 }
 
-/* ********************* */
-/* END Week CSS Settings */
+
 /* ********************* */
 
+
+/* END Week CSS Settings */
+
+
+/* ********************* */
+
+
 /* ************************** */
+
+
 /* START Weekday CSS Settings */
+
+
 /* ************************** */
 
 simple-calendar .weekday {
-  text-align: center;
-  padding-right: 0.9px;
-  border-top: 1px solid #dddddd;
+    text-align: center;
+    padding-right: 0.9px;
+    border-top: 1px solid #dddddd;
+    background-color: rgba(225, 225, 225, .8);
+    font-size: 20px;
 }
 
 simple-calendar .weekday:first-child {
-  text-align: center;
-  border-left: 1px solid #dddddd;
+    text-align: center;
+    border-left: 1px solid #dddddd;
 }
 
 simple-calendar .weekday:last-child {
-  text-align: center;
-  border-right: 1px solid #dddddd;
+    text-align: center;
+    border-right: 1px solid #dddddd;
 }
 
+
 /* ************************ */
+
+
 /* END Weekday CSS Settings */
+
+
 /* ************************ */
 
 simple-calendar .week .day:last-child {
-  border-right: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    /*    padding-left: 10px;*/
+    /*    height: 150px;*/
 }
 
 simple-calendar .week .day:nth-child(1) {
-  border-left: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    /*    padding-left: 5px;*/
+    /*    height: 150px;*/
 }
 
 simple-calendar .week .day:nth-child(7) {
-  border-right: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    /*    padding-left: 5px;*/
+    /*    height: 150px;*/
 }
 
-simple-calendar .weekday, .day {
-  display: inline-block;
-  width: calc(95% / 7);
+simple-calendar .weekday,
+.day {
+    display: inline-block;
+    width: calc(95% / 7);
+    padding-left: 10px;
 }
 
 simple-calendar .day {
-  height: inherit;
-  padding-bottom: 2px;
-  padding-top: 2px;
-  border: 1px solid #dddddd;
-  border-bottom: none;
-  border-left: none;
-  overflow: hidden;
+    height: inherit;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    border: 1px solid #dddddd;
+    border-bottom: none;
+    border-left: none;
+    overflow: hidden;
 }
 
 simple-calendar .day:hover {
-  cursor: pointer;
+    /*    cursor: pointer;*/
 }
 
 simple-calendar .day.default {
-  background-color: lightblue;
+    background-color: lightblue;
 }
 
 simple-calendar .day.event {
-  background-color: #fdf3ea;
+    background-color: #fdf3ea;
 }
 
 simple-calendar .day.disabled {
-  cursor: default;
-  color: silver;
-  background-color: white;
+    cursor: default;
+    color: silver;
+    background-color: white;
+}
+
+.day-number {
+    font-size: 50px;
+}
+
+.day {
+    font-size: 20px;
+    /*    text-align: center;*/
 }
