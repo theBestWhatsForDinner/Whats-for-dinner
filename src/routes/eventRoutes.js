@@ -2,7 +2,7 @@ var express = require("express");
 var eventRouter = express.Router();
 var events = require("../models/events");
 
-eventRouter("/")
+eventRouter.route("/")
     .get(function (req, res) {
         events.find({
             user: req.user._id

@@ -45,7 +45,10 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
                     title: $scope.cookBook[i],
                     date: new Date(dates[i])
                 };
-                $scope.events.push(event);
+                theService.addEvent().then(function(response) {
+                    $scope.events.push(response.event);
+                });
+                
             }
             return $scope.events;
         };
