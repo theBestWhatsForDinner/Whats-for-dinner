@@ -49,7 +49,11 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
             console.log($scope.events);
             return $scope.events;
         }
-        planMeals();
+        $scope.randomize = function(){
+            planMeals();
+        }
+        
+        
         $scope.calendarOptions = {
             defaultDate: new Date(),
             minDate: new Date(),
@@ -61,8 +65,7 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
             dateClick: $scope.dateClick
         };
     });
-    $scope.dateClick = function() {
-     console.log("yep")    
-    };
-
+    
+    
+    
 }])
