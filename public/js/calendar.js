@@ -38,18 +38,19 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
 
         function planMeals() {
             var cookBookLength = $scope.cookBook.length;
-            $scope.events = [];
             var dates = getMonth();
             for (var i = 0; i < cookBookLength; i++) {
                 var event = {
                     title: $scope.cookBook[i],
                     date: new Date(dates[i])
                 };
-                theService.addEvent().then(function(response) {
-                    $scope.events.push(response.event);
+                theService.addEvent(event).then(function (response) {
+                        $scope.events = [];
+                    $scope.events.push(event);
                 });
-                
+
             }
+            console.log($scope.events);
             return $scope.events;
         };
         $scope.randomize = function () {
