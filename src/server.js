@@ -31,7 +31,8 @@ app.use("/api", expressJwt({
 
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/api/recipes", require("./routes/recipeRoutes"));
-app.use("/api/pantry", require("./routes/pantryRoutes"))
+app.use("/api/pantry", require("./routes/pantryRoutes"));
+app.use("/api/events", require("./routes/eventRoutes"));
 
 app.listen(port, function () {
     console.log("I hear dead people..." + port);
