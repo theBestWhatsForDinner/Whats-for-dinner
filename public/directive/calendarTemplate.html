@@ -11,15 +11,20 @@
 
 <div style="width: 100%:">
     <div ng-repeat="day in weekDays(options.dayNamesLength) track by $index" class="weekday">{{ day }}</div>
+    
 </div>
 <div>
     <div ng-repeat="week in weeks track by $index" class="week">
-        <div class="day" ng-class="{default: isDefaultDate(date), event: date.event.length > 0, disabled: date.disabled || !date}" ng-repeat="date in week  track by $index" ng-click="onClick(date)">
+        <div class="day" ng-class="{default: isDefaultDate(date), event: date.event.length > 0, disabled: date.disabled || !date}" ng-repeat="date in week track by $index"> 
+<!--            ng-click="onClick(date)"-->
             <div class="day-number">{{ date.day || "&nbsp;" }}</div>
             <div class="event-title" ng-repeat="events in date.event | limitTo : options.maxEventsPerDay" ng-if="options.multiEventDates">{{ event.title.title || "&nbsp;" }}
                 <div ng-if="date.event.length > options.maxEventsPerDay">More Events</div>
             </div>
             <div class="event-title" ng-if="!options.multiEventDates"><a href="#/recipes/{{ date.event[0].title._id }}">{{ date.event[0].title.title || "&nbsp;" | capitalize }}</a></div>
+            <div>
+                <select ng-options="recipe.title for recipe in cookBook" ng-model="date.chosenRecipe" ng-if="date.day"></select>
+            </div>
         </div>
     </div>
 </div>
