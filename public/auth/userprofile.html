@@ -12,12 +12,13 @@ User cooking skill level-->
             <h1><u>{{authService.currentUser.username | capitalize}}'s profile</u></h1>
         </div>
         <br>
-        <div class="col-lg-4 col-lg-offset-1">
+        <div class="col-lg-6 col-lg-offset-1">
             <h3><u>User name:</u> {{authService.currentUser.name | capitalize}}</h3>
             <h3><u>Favorite food:</u> {{authService.currentUser.favoriteFood | capitalize}}</h3>
             <h3><u>Skill level:</u> {{authService.currentUser.skill}}</h3>
+            <img class="skillImg" ng-src="{{imgUrl}}" alt="">
         </div>
-        <div class="col-lg-2 col-lg-offset-8">
+        <div class="col-lg-2 col-lg-offset-7">
             <img class="profileImg" ng-src="{{authService.currentUser.userImg}}" alt="">
         </div>
     </div>
