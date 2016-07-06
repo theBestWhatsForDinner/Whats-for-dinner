@@ -3,6 +3,7 @@ var app = angular.module("mealPlannerApp");
 app.controller("ProfileController", ["$scope", "authService", function ($scope, authService) {
 
     $scope.authService = authService;
+
     switch (authService.currentUser.skill) {
     case 1:
         $scope.imgUrl = "http://thedumpandpourchef.com/wp-content/uploads/2015/10/small-chef.png";

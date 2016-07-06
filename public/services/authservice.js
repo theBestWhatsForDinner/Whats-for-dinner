@@ -23,9 +23,6 @@ app.service("authService", ["$http", function ($http) {
         return $http.post(baseurl + "login", user).then(function (response) {
             localStorage.setItem("token", response.data.token);
             self.currentUser = getOrSetUser(response.data.user);
-//            if (response.data.user.skill === 1) {
-    //                path.innerHTML = "<img src='http://img.photobucket.com/albums/v719/bruckner/SouthPark/c_chef.gif'>";
-    //            }
             return response;
         })
     }
