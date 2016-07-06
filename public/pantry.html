@@ -27,7 +27,7 @@
             <br>
             <br>
             <p>Quantity: {{ item.quantity }}</p>
-            <p>Expires in {{ item.expiration | expirationFilter }} days.</p>
+            <p>Expires in {{ item.expiration  | expirationFilter }} days.</p>
             <button ng-click="quantityUp($index)" class="btn btn-info quantity"><span class="glyphicon glyphicon-plus"></span></button>
             <button ng-click="quantityDown($index)" class="btn btn-info quantity"><span class="glyphicon glyphicon-minus"></span></button>
             <br>

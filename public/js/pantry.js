@@ -7,6 +7,14 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
 
     $scope.theService.getPantry().then(function (response) {
         $scope.pantry = response.data;
+        
+        console.log($scope.pantry);
+        
+        for (i = 0; i < $scope.pantry.length; i++) {
+            if (Math.ceil((Date.parse($scope.pantry[i].expiration) - Date.now())/86400000) < 3) {
+                
+            }
+        }
     });
 
     $scope.addIngredient = function () {
@@ -46,27 +54,18 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
 
             if (response.data.quantity < 1) {
                 $scope.deleteIngredient(ingredient._id, index);
-
             }
         });
-
     };
 }]);
 
 app.filter('expirationFilter', function () {
 
-    // Create the return function
-    // set the required parameter name to **number**
     return function (expiration) {
 
-        //        var totalSec = totalTime;
-
-        var today = new Date;
-        
-        console.log(today);
-        console.log(expiration);
-
-        var countdown = today - expiration;
+        var currentDate = Date.now();
+        var expireDate = Date.parse(expiration);
+        var countdown = Math.ceil((expireDate - currentDate) / 86400000);
 
         return countdown;
 
