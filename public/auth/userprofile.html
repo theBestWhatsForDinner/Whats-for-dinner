@@ -1,4 +1,16 @@
+<!--
+User name
+favorite food
+favorite food Img
+user Img
+User cooking skill level-->
+
+
 <div>
-<h1>BLARG</h1>
-<h1>DARG</h1>
+    <h1>{{user.username}}'s profile</h1>
+    <h3>{{user.name}}</h3>
+    <h3>{{user.favoriteFood}}</h3>
+    <h3>{{user.skill}}</h3>
+    <img ng-src="{{user.favFoodImg}}" alt="">
+    <img ng-src="{{user.userImg}}" alt="">
 </div>

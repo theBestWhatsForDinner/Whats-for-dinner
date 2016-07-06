@@ -1,11 +1,12 @@
 var app = angular.module("mealPlannerApp");
 
 app.controller("CalendarController", ["$scope", "theService", function ($scope, theService) {
-    $scope.mealsList = [];
+    $scope.cookBook = [];
+    $scope.theService = theService;
 
 
-    theService.getTitle().then(function (titleList) {
-        $scope.mealsList = titleList;
+    theService.getRecipe().then(function (response) {
+        $scope.cookBook = response.data;
 
         function shuffle(array) {
             var currentIndex = array.length,
@@ -36,12 +37,12 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
         };
 
         function planMeals() {
-            var mealsLength = $scope.mealsList.length;
+            var cookBookLength = $scope.cookBook.length;
             $scope.events = [];
             var dates = getMonth();
-            for (var i = 0; i < mealsLength; i++) {
+            for (var i = 0; i < cookBookLength; i++) {
                 var event = {
-                    title: $scope.mealsList[i],
+                    title: $scope.cookBook[i],
                     date: new Date(dates[i])
                 };
                 $scope.events.push(event);
@@ -49,23 +50,26 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
             console.log($scope.events);
             return $scope.events;
         }
-        $scope.randomize = function(){
+        $scope.randomize = function () {
             planMeals();
         }
-        
-        
+
+
         $scope.calendarOptions = {
             defaultDate: new Date(),
             minDate: new Date(),
             maxDate: new Date([2020, 12, 31]),
             dayNamesLength: 9, // How to display weekdays (1 for "M", 2 for "Mo", 3 for "Mon"; 9 will show full day names; default is 1)
             multiEventDates: false, // Set the calendar to render multiple events in the same day or only one event, default is false
-            maxEventsPerDay: 1, // Set how many events should the calendar display before showing the 'More Events' message, default is 3;
-            eventClick: $scope.eventClick,
-            dateClick: $scope.dateClick
+            maxEventsPerDay: 1 // Set how many events should the calendar display before showing the 'More Events' message, default is 3;
+                //            eventClick: $scope.eventClick,
+                //            dateClick: $scope.dateClick
         };
     });
-    
-    
-    
+
+    $scope.theService.getRecipeId().then(function (response) {
+        $scope.event = response.data;
+    })
+
+
 }])

@@ -58,8 +58,8 @@ app.service("theService", ["$http", "$routeParams", function ($http, $routeParam
     //******CALENDAR******
 
     this.getTitle = function () {
-        return $http.get(baseRecipeUrl).then(function (responce) {
-            var list = responce.data;
+        return $http.get(baseRecipeUrl).then(function (response) {
+            var list = response.data;
             var titleList = [];
             var length = list.length;
             for (var i = 0; i < length; i++) {
