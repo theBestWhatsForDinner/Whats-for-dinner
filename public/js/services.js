@@ -16,7 +16,6 @@ app.service("theService", ["$http", "$routeParams", function ($http, $routeParam
 
     // Add recipes to cook book
 
-
     this.postRecipe = function (recipe) {
         return $http.post(baseRecipeUrl, recipe);
     };
