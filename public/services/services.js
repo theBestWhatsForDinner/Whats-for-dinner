@@ -5,6 +5,7 @@ app.service("theService", ["$http", "$routeParams", function ($http, $routeParam
     var baseAuthUrl = "http://localhost:8000/auth/";
     var baseRecipeUrl = "http://localhost:8000/api/recipes/";
     var basePantryUrl = "http://localhost:8000/api/pantry/";
+    var baseApiUrl = "http://localhost:8000/api/";
 
     //******RECIPES******
 
@@ -66,6 +67,17 @@ app.service("theService", ["$http", "$routeParams", function ($http, $routeParam
                 titleList.push(list[i].title);
             };
             return titleList;
+        })
+    };
+    
+    this.addEvent = function(event) {
+        return $http.post(baseApiUrl + "events", event).then(function (responce) {
+            return responce.data;
+        })
+    };
+    this.getEvents = function() {
+        return $http.get(baseApiUrl + "events").then(function (responce) {
+            return responce.data
         })
     };
 

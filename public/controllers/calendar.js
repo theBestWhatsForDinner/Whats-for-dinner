@@ -38,23 +38,34 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
 
         function planMeals() {
             var cookBookLength = $scope.cookBook.length;
-            $scope.events = [];
             var dates = getMonth();
             for (var i = 0; i < cookBookLength; i++) {
                 var event = {
                     title: $scope.cookBook[i],
                     date: new Date(dates[i])
                 };
-                $scope.events.push(event);
+                theService.addEvent(event).then(function (response) {
+//                        $scope.events = [];
+                    $scope.events.push(event);
+                });
+
             }
             console.log($scope.events);
             return $scope.events;
-        }
+        };
         $scope.randomize = function () {
             planMeals();
-        }
-
-
+        };
+        $scope.saveMeals = function () {
+            sessionStorage.setItem("meals", JSON.stringify($scope.events));
+        };
+        $scope.getMeals = function () {
+     var meals = theService.getEvents().then(function(responce) {
+        $scope.events = meals;
+     });     
+//            var meals = sessionStorage.getItem("meals");
+//            $scope.events = JSON.parse(meals);
+        };
         $scope.calendarOptions = {
             defaultDate: new Date(),
             minDate: new Date(),
@@ -70,6 +81,7 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
     $scope.theService.getRecipeId().then(function (response) {
         $scope.event = response.data;
     })
+
 
 
 }])
