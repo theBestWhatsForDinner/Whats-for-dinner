@@ -21,10 +21,6 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
-    favFoodImg: {
-        type: String,
-        required: true
-    },
     skill: {
         type: Number,
         required: true

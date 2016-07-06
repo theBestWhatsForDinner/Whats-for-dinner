@@ -184,3 +184,32 @@ hr:after {
 .randomBtn {
     text-align: center;
 }
+
+.signUp {
+    text-align: center;
+}
+
+.userProfile {
+    background-color: rgba(225, 225, 225, .8);
+    height: 450px;
+}
+
+.userProfile > div > div > h1 {
+    font-size: 60px;
+}
+
+.userProfile > div > div > h3 {
+    font-size: 40px;
+}
+
+.head {
+    text-align: center;
+}
+
+.profileImg {
+    height: 300px;
+    margin-top: -250px;
+    border: solid black;
+    outline: double black 5px;
+    padding: 10px;
+}

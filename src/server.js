@@ -6,6 +6,7 @@ var cors = require("cors");
 var morgan = require("morgan");
 var config = require("./config");
 var port = process.env.PORT || 8000;
+var path = require("path");
 var recipesSchema = require("./models/recipes");
 var expressJwt = require("express-jwt");
 
@@ -19,6 +20,7 @@ mongoose.connection.on("connected", function () {
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "..", "public")));
 app.use("/recipes", require("./routes/recipeRoutes"));
 
 app.use("/api", expressJwt({

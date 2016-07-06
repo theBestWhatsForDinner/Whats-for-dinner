@@ -29,27 +29,27 @@ app.config(function ($routeProvider) {
 
     $routeProvider
         .when("/pantry", {
-            templateUrl: "pantry.html",
+            templateUrl: "pages/pantry.html",
             controller: "PantryController"
         })
         .when("/calendar", {
-            templateUrl: "calendar.html",
+            templateUrl: "pages/calendar.html",
             controller: "CalendarController"
         })
         .when("/recipes/:recipeId", {
-            templateUrl: "recipe.html",
+            templateUrl: "pages/recipe.html",
             controller: "RecipeController"
         })
         .when("/recipes/:date.event[0].titleId", {
-            templateUrl: "recipe.html",
+            templateUrl: "pages/recipe.html",
             controller: "RecipeController"
         })
         .when("/recipes", {
-            templateUrl: "recipes.html",
+            templateUrl: "pages/recipes.html",
             controller: "RecipeController"
         })
         .when("/home", {
-            templateUrl: "home.html",
+            templateUrl: "pages/home.html",
             controller: "HomeController"
         })
         .when("/login", {
@@ -62,7 +62,7 @@ app.config(function ($routeProvider) {
         })
         .when("/settings", {
             templateUrl: "./auth/userprofile.html",
-            controller: "authController"
+            controller: "ProfileController"
         })
         .otherwise({
             templateUrl: "./auth/landing.html",

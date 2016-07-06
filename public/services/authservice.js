@@ -2,16 +2,20 @@ var app = angular.module("mealPlannerApp");
 
 app.service("authService", ["$http", function ($http) {
     var baseurl = "http://localhost:8000/auth/";
-    this.userProfiles = [];
+
+    this.currentUser = {};
+    var self = this;
 
     this.login = function (user) {
-        return $http.post(baseurl + "login", user).then(function (responce) {
-            return responce.data;
+        return $http.post(baseurl + "login", user).then(function (response) {
+            localStorage.setItem("token", response.data.token);
+            self.currentUser = response.data.user;
+            //            return response.data;
         })
     }
     this.signup = function (user) {
-        return $http.post(baseurl + "signup", user).then(function (responce) {
-            return responce.data;
+        return $http.post(baseurl + "signup", user).then(function (response) {
+            return response.data;
         })
     }
     this.getToken = function () {
