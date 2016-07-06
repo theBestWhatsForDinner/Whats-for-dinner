@@ -7,6 +7,7 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
 
     theService.getRecipe().then(function (response) {
         $scope.cookBook = response.data;
+        $scope.events = [];
 
         function shuffle(array) {
             var currentIndex = array.length,
@@ -37,34 +38,32 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
         };
 
         function planMeals() {
+            $scope.events = [];
             var cookBookLength = $scope.cookBook.length;
             var dates = getMonth();
             for (var i = 0; i < cookBookLength; i++) {
                 var event = {
                     title: $scope.cookBook[i],
                     date: new Date(dates[i])
-                };
-                theService.addEvent(event).then(function (response) {
-//                        $scope.events = [];
-                    $scope.events.push(event);
-                });
-
-            }
-            console.log($scope.events);
+                }
+                $scope.events.push(event);
+            };
             return $scope.events;
         };
         $scope.randomize = function () {
             planMeals();
         };
         $scope.saveMeals = function () {
-            sessionStorage.setItem("meals", JSON.stringify($scope.events));
+            for (var i = 0; i < $scope.events.length; i++) {
+                 theService.addEvent($scope.events[i]).then(function (response) {
+                                });
+            };
         };
         $scope.getMeals = function () {
-     var meals = theService.getEvents().then(function(responce) {
-        $scope.events = meals;
-     });     
-//            var meals = sessionStorage.getItem("meals");
-//            $scope.events = JSON.parse(meals);
+                theService.getEvents().then(function(meals) {
+                     console.log(meals)
+                    $scope.events = meals;
+                 });     
         };
         $scope.calendarOptions = {
             defaultDate: new Date(),

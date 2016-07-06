@@ -13,12 +13,13 @@ eventRouter.route("/")
     })
     .post(function (req, res) {
         newEvent = new events(req.body);
-        newEvent.save(function (err, user) {
-                if (err) res.status(500).send(err);
+        newEvent.user = req.user._id;
+        newEvent.save(function (err, event) {
+                if (err)res.status(500).send(err);
                 else res.send({
                     success: true,
                     message: "Successfully added event",
-                    event: newEvent
+                    event: event
                 });
             });
     })
