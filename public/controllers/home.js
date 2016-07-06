@@ -1,4 +1,5 @@
 var app = angular.module("mealPlannerApp");
+
 app.controller("HomeController", ["$scope", "$http", "theService", "$location", function ($scope, $http, theService, $location) {
     // checks for token without makeing call to the server
     (function () {
@@ -7,9 +8,9 @@ app.controller("HomeController", ["$scope", "$http", "theService", "$location", 
             $location.path("/landing")
         }
     }());
-//    $scope.theService = theService;
-//    $scope.theService.getPantry().then(function (response) {
-//        
-//    });
+    //    $scope.theService = theService;
+    //    $scope.theService.getPantry().then(function (response) {
+    //
+    //    });
 
 }]);

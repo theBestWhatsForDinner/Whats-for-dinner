@@ -191,7 +191,7 @@ hr:after {
 
 .userProfile {
     background-color: rgba(225, 225, 225, .8);
-    height: 450px;
+    height: 500px;
 }
 
 .userProfile > div > div > h1 {
@@ -208,8 +208,12 @@ hr:after {
 
 .profileImg {
     height: 300px;
-    margin-top: -250px;
+    margin-top: -400px;
     border: solid black;
     outline: double black 5px;
     padding: 10px;
+}
+
+.skillImg {
+    height: 150px;
 }

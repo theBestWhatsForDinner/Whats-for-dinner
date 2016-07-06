@@ -1,6 +1,6 @@
-var app = angular.module("mealPlannerApp", ["ngRoute", "ngAnimate", "500tech.simple-calendar"]);
+var app = angular.module("mealPlannerApp", ["ngRoute", "ngAnimate", "500tech.simple-calendar", "ngStorage"]);
 
-app.controller("indexController", ["$scope", "$location", "authService", function ($scope, $location, authService) {
+app.controller("indexController", ["$scope", "$location", "authService", function ($scope, $location, authService, $localStorage) {
 
     this.authService = authService;
 
