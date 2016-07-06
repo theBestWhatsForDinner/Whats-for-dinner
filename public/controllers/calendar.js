@@ -83,9 +83,7 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
     })
 
 
-<<<<<<< HEAD:public/js/calendar.js
-}])
-=======
+
 }])
 
 app.filter('capitalize', function () {
@@ -93,4 +91,3 @@ app.filter('capitalize', function () {
         return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
     }
 });
->>>>>>> develop:public/controllers/calendar.js
