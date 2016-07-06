@@ -46,12 +46,18 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
                 };
                 $scope.events.push(event);
             }
-            console.log($scope.events);
             return $scope.events;
-        }
+        };
         $scope.randomize = function(){
             planMeals();
-        }
+        };
+        $scope.saveMeals = function(){
+            sessionStorage.setItem("meals", JSON.stringify($scope.events));
+        };
+        $scope.getMeals = function(){
+            var meals = sessionStorage.getItem("meals");
+            $scope.events = JSON.parse(meals);
+        };
         
         
         $scope.calendarOptions = {
