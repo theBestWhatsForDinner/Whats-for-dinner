@@ -14,7 +14,7 @@ mongoose.connect(config.database, function () {
 });
 // this will console log only if connected to mongodb
 mongoose.connection.on("connected", function () {
-    console.log("conected to mongod");
+    console.log("pop goes the wesel");
 });
 app.use(bodyParser.json());
 app.use(cors());
