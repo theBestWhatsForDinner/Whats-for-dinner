@@ -25,5 +25,8 @@ app.controller("RecipeController", ["$scope", "theService", function ($scope, th
         })
     }
 
+    $scope.theService.getRecipeId().then(function (response) {
+        $scope.recipe = response.data;
+    })
 
 }]);

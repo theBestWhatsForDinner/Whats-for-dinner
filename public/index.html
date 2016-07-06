@@ -9,24 +9,15 @@
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="http://pre06.deviantart.net/95fc/th/pre/f/2012/088/c/f/salad_fingers_by_tehcheychibi-d4uazpc.png">
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/inverticons-stroke-vol-4/32/food_eat_restaurant_fork_knife-512.png">
 </head>
 
-<body ng-controller="indexController" class="container-fluid">
+<body ng-controller="indexController" class="container-fluid mainBack">
 
-    <nav class="nav row">
-
-        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/">Home</a>
-        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/recipes">Recipes</a>
-        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/pantry">Pantry</a>
-        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/calendar">Calendar</a>
-        <a class="col-xs-12 col-sm-3" ng-hide="token === true" href="#/login">LOG IN</a>
-        <a class="col-xs-12 col-sm-3" ng-hide="token === true" href="#/signup">SIGN UP</a>
-        <a class="col-xs-12 col-sm-3" ng-show="token === true" ng-click="logOut()" href="#/logout">LOG OUT</a>
-        <a class="col-xs-12 col-sm-3" ng-show="token === true" href="#/settings">YOUR ACCOUNT</a>
-
-    </nav>
+    <nav-bar></nav-bar>
 
     <div class="page {{ pageClass }}" ng-view></div>
 
@@ -41,6 +32,7 @@
     <!--                    front end auth js src for         -->
     <script src="js/auth.js"></script>
     <script src="directive/angular-simple-calendar.js"></script>
+    <script src="directive/navDirective.js"></script>
     <script src="js/calendar.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/authinterceptor.js"></script>
@@ -48,7 +40,6 @@
     <script src="js/userprofile.js"></script>
     <script src="js/pantry.js"></script>
     <script src="js/home.js"></script>
-    <script src="js/recipe.js"></script>
     <script src="js/recipes.js"></script>
 
 

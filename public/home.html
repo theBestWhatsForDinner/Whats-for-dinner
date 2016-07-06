@@ -1,14 +1,23 @@
-<div class="home">
-    
-    <button ng-click="" class="homeButtons">Recipes</button>
-    <button ng-click="" class="homeButtons">Pantry</button>
-    
-    
-    
-    
-    
-    
-    
-    
-    
+<div class="row homeHead">
+    <h1><img class="headImg" src="http://www.binngroup.co.uk/portals/0/Images/Icons/July/BinnGroup-Website-icons-July14_food.png" alt="">  Welcome to What's for Dinner?!  <img class="reverseHeadImg" src="http://www.binngroup.co.uk/portals/0/Images/Icons/July/BinnGroup-Website-icons-July14_food.png" alt=""></h1>
+</div>
+
+<div class="home row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <a href="#/recipes">
+            <button class="homeButtons btn btn-lg btn-default">Recipes</button>
+        </a>
+        <a href="#/pantry">
+            <button class="homeButtons btn btn-lg btn-default">Pantry</button>
+        </a>
+        <a href="#/calendar">
+            <button class="homeButtons btn btn-lg btn-default">Calendar</button>
+        </a>
+        <a href="#/settings">
+            <button class="homeButtons btn btn-lg btn-default">Your Account</button>
+        </a>
+        <a href="#/logout">
+            <button class="homeButtons btn btn-lg btn-default" ng-show="loggedIn()" ng-click="logOut()">Logout</button>
+        </a>
+    </div>
 </div>

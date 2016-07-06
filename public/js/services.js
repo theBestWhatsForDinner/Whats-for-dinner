@@ -1,6 +1,6 @@
 var app = angular.module("mealPlannerApp");
 
-app.service("theService", ["$http", function ($http) {
+app.service("theService", ["$http", "$routeParams", function ($http, $routeParams) {
 
     var baseAuthUrl = "http://localhost:8000/auth/";
     var baseRecipeUrl = "http://localhost:8000/api/recipes/";
@@ -16,11 +16,15 @@ app.service("theService", ["$http", function ($http) {
 
     // Add recipes to cook book
 
-
     this.postRecipe = function (recipe) {
         return $http.post(baseRecipeUrl, recipe);
     };
 
+    this.getRecipeId = function () {
+        return $http.get(baseRecipeUrl + $routeParams.recipeId).then(function (response) {
+            return response;
+        })
+    };
 
     //******PANTRY******
 
