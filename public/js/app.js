@@ -40,6 +40,10 @@ app.config(function ($routeProvider) {
             templateUrl: "recipe.html",
             controller: "RecipeController"
         })
+        .when("/recipes/:date.event[0].titleId", {
+            templateUrl: "recipe.html",
+            controller: "RecipeController"
+        })
         .when("/recipes", {
             templateUrl: "recipes.html",
             controller: "RecipeController"
