@@ -1,11 +1,11 @@
 <div class="current-month">
     <div class="move-month prev-month" ng-click="prevMonth()">
-        <span ng-show="allowedPrevMonth()">&#x2039;</span>
+        <button class="calBtn" ng-show="allowedPrevMonth()">&#x2039;</button>
     </div>
     <span>{{ selectedMonth }}</span> &nbsp;
     <span>{{ selectedYear }}</span>
     <div class="move-month next-month" ng-click="nextMonth()">
-        <span ng-show="allowedNextMonth()">&#x203a;</span>
+        <button class="calBtn" ng-show="allowedNextMonth()">&#x203a;</button>
     </div>
 </div>
 

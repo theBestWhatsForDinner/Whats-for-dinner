@@ -1,12 +1,15 @@
 var app = angular.module("mealPlannerApp", ["ngRoute", "ngAnimate", "500tech.simple-calendar"]);
 
-app.controller("indexController", ["$scope", "$location", function ($scope, $location) {
+app.controller("indexController", ["$scope", "$location", "authService", function ($scope, $location, authService) {
+
+    this.authService = authService;
 
     $scope.scroll = function () {
         window.scroll(0, 0);
     };
 
     $scope.logOut = function () {
+        authService.removeUser()
         localStorage.removeItem("token");
         localStorage.removeItem("_id");
         $location.path("/logout");
@@ -21,7 +24,6 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
             return false;
         }
     }
-
 
 }]);
 
