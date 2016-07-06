@@ -13,7 +13,7 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
 
     };
 
-    $scope.loggedIn = function() {
+    $scope.loggedIn = function () {
         var token = localStorage.getItem("token");
         if (token) {
             return true;
@@ -21,7 +21,7 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
             return false;
         }
     }
-    
+
 
 }]);
 
