@@ -1,46 +1,66 @@
-<section class="row well">
-    <form>
-        <div>
-            <label>Name</label>
-            <input type="text" placeholder="Name" ng-model="user.name">
-        </div>
-        <div>
-            <label>Username</label>
-            <input type="text" placeholder="Username" ng-model="user.username">
-        </div>
-        <div>
-            <label>Favorite Food</label>
-            <input type="text" placeholder="Favorite Food" ng-model="user.favoriteFood">
-        </div>
-        <div>
-            <label>Favorite Food Image</label>
-            <input type="text" placeholder="Favorite Food Img" ng-model="user.favFoodImg">
-        </div>
-        <div>
-            <label>Skill level</label>
-            <input type="radio" value="true" ng-model="user.skill">
-            <label>1</label>
-            <input type="radio" value="true" ng-model="user.skill">
-            <label>2</label>
-            <input type="radio" value="true" ng-model="user.skill">
-            <label>3</label>
-            <input type="radio" value="true" ng-model="user.skill">
-            <label>4</label>
-            <input type="radio" value="true" ng-model="user.skill">
-            <label>5</label>
-        </div>
-        <div>
-            <label>Profile Image</label>
-            <input type="text" placeholder="User image" ng-model="user.userImg">
-        </div>
-        <div>
-            <label>Password</label>
-            <input type="password" placeholder="Password" ng-model="user.password">
-        </div>
-        <div>
-            <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm Password" ng-model="user.password2">
-        </div>
-        <button ng-click="newUser(user)">SIGN UP</button>
-    </form>
+<section class="row signUp">
+    <div class="col-lg-4 col-lg-offset-4 signUp">
+        <form class="well">
+            <div>
+                <label>Name</label>
+                <br>
+                <input type="text" placeholder="Name" ng-model="user.name">
+            </div>
+            <br>
+            <div>
+                <label>Username</label>
+                <br>
+                <input type="text" placeholder="Username" ng-model="user.username">
+            </div>
+            <br>
+            <div>
+                <label>Favorite Food</label>
+                <br>
+                <input type="text" placeholder="Favorite Food" ng-model="user.favoriteFood">
+            </div>
+            <br>
+            <div>
+                <label>Favorite Food Image</label>
+                <br>
+                <input type="text" placeholder="Favorite Food Img" ng-model="user.favFoodImg">
+            </div>
+            <br>
+            <div>
+                <label>Skill level</label>
+                <br>
+                <label>(1 being beginner, 5 being expert)</label>
+                <br>
+                <input type="radio" value="1" ng-model="user.skill">
+                <label>1</label>
+                <input type="radio" value="2" ng-model="user.skill">
+                <label>2</label>
+                <input type="radio" value="3" ng-model="user.skill">
+                <label>3</label>
+                <input type="radio" value="4" ng-model="user.skill">
+                <label>4</label>
+                <input type="radio" value="5" ng-model="user.skill">
+                <label>5</label>
+            </div>
+            <br>
+            <div>
+                <label>Profile Image</label>
+                <br>
+                <input type="text" placeholder="User image" ng-model="user.userImg">
+            </div>
+            <br>
+            <div>
+                <label>Password</label>
+                <br>
+                <input type="password" placeholder="Password" ng-model="user.password">
+            </div>
+            <br>
+            <div>
+                <label>Confirm Password</label>
+                <br>
+                <input type="password" placeholder="Confirm Password" ng-model="user.password2">
+            </div>
+            <br>
+            <button class="btn btn-lg btn-default" ng-click="newUser(user)">SIGN UP</button>
+        </form>
+    </div>
 </section>

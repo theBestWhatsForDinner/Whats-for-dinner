@@ -6,11 +6,19 @@ user Img
 User cooking skill level-->
 
 
-<div>
-    <h1>{{user.username}}'s profile</h1>
-    <h3>{{user.name}}</h3>
-    <h3>{{user.favoriteFood}}</h3>
-    <h3>{{user.skill}}</h3>
-    <img ng-src="{{user.favFoodImg}}" alt="">
-    <img ng-src="{{user.userImg}}" alt="">
+<div class="container userProfile">
+    <div class="row">
+        <div class="head">
+            <h1><u>{{authService.currentUser.username}}'s profile</u></h1>
+        </div>
+        <br>
+        <div class="col-lg-4 col-lg-offset-1">
+            <h3>User name: {{authService.currentUser.name}}</h3>
+            <h3>Favorite food: {{authService.currentUser.favoriteFood}}</h3>
+            <h3>Skill level: {{authService.currentUser.skill}}</h3>
+        </div>
+        <div class="col-lg-2 col-lg-offset-8">
+            <img class="profileImg" ng-src="{{authService.currentUser.userImg}}" alt="">
+        </div>
+    </div>
 </div>

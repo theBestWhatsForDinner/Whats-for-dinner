@@ -62,7 +62,7 @@ app.config(function ($routeProvider) {
         })
         .when("/settings", {
             templateUrl: "./auth/userprofile.html",
-            controller: "authController"
+            controller: "ProfileController"
         })
         .otherwise({
             templateUrl: "./auth/landing.html",
