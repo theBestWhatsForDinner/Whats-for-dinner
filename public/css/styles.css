@@ -165,3 +165,7 @@ hr {
     background-color: rgba(225, 225, 225, .5);
     text-align: center;
 }
+
+.goBackA {
+    margin-bottom: 10px;
+}
