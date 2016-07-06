@@ -29,7 +29,7 @@ body {
 }
 
 .nav {
-    background-color: white;
+    background-color: rgba(225, 225, 225, .8);
     position: fixed;
     top: 0;
     width: 100%;
@@ -159,4 +159,9 @@ hr {
 
 .myRecipeH {
     font-size: 40px;
+}
+
+.landingDiv {
+    background-color: rgba(225, 225, 225, .5);
+    text-align: center;
 }
