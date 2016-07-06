@@ -6,3 +6,9 @@ app.controller("ProfileController", ["$scope", "authService", function ($scope, 
     console.log(authService.currentUser);
 
 }])
+
+app.filter('capitalize', function () {
+    return function (input) {
+        return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+});

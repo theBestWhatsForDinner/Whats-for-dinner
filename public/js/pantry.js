@@ -62,7 +62,7 @@ app.filter('expirationFilter', function () {
         //        var totalSec = totalTime;
 
         var today = new Date;
-        
+
         console.log(today);
         console.log(expiration);
 
@@ -70,5 +70,11 @@ app.filter('expirationFilter', function () {
 
         return countdown;
 
+    }
+});
+
+app.filter('capitalize', function () {
+    return function (input) {
+        return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
     }
 });

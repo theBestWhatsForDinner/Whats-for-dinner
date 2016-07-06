@@ -19,7 +19,7 @@
             <div class="event-title" ng-repeat="events in date.event | limitTo : options.maxEventsPerDay" ng-if="options.multiEventDates">{{ event.title.title || "&nbsp;" }}
                 <div ng-if="date.event.length > options.maxEventsPerDay">More Events</div>
             </div>
-            <div class="event-title" ng-if="!options.multiEventDates"><a href="#/recipes/{{ date.event[0].title._id }}">{{ date.event[0].title.title || "&nbsp;" }}</a></div>
+            <div class="event-title" ng-if="!options.multiEventDates"><a href="#/recipes/{{ date.event[0].title._id }}">{{ date.event[0].title.title || "&nbsp;" | capitalize }}</a></div>
         </div>
     </div>
 </div>
