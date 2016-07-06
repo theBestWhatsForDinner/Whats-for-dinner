@@ -45,7 +45,7 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
                     date: new Date(dates[i])
                 };
                 theService.addEvent(event).then(function (response) {
-                        $scope.events = [];
+//                        $scope.events = [];
                     $scope.events.push(event);
                 });
 
@@ -60,8 +60,11 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
             sessionStorage.setItem("meals", JSON.stringify($scope.events));
         };
         $scope.getMeals = function () {
-            var meals = sessionStorage.getItem("meals");
-            $scope.events = JSON.parse(meals);
+     var meals = theService.getEvents().then(function(responce) {
+        $scope.events = meals;
+     });     
+//            var meals = sessionStorage.getItem("meals");
+//            $scope.events = JSON.parse(meals);
         };
         $scope.calendarOptions = {
             defaultDate: new Date(),

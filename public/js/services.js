@@ -76,7 +76,7 @@ app.service("theService", ["$http", "$routeParams", function ($http, $routeParam
         })
     };
     this.getEvents = function() {
-        return $http.post(baseApiUrl + "events").then(function (responce) {
+        return $http.get(baseApiUrl + "events").then(function (responce) {
             return responce.data
         })
     };
