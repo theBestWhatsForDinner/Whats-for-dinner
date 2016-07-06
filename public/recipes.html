@@ -9,7 +9,11 @@
             <br>
             <input placeholder="Total Prep time in minutes" type="number" ng-model="recipe.prepTime">
             <br>
-            <input placeholder="Ingredients" type="text" ng-model="recipe.ingredients">
+            <input placeholder="Ingredients" type="text" ng-model="ingredient">
+            <button ng-click="addIngredient()">Add Ingredient</button>
+            <ul>
+                <li ng-repeat="ingredient in ingredients">{{ ingredient }}</li>
+            </ul>
             <br>
             <textarea placeholder="Directions" ng-model="recipe.directions"></textarea>
             <br>
@@ -39,7 +43,9 @@
     <div class="recipe col-lg-4" ng-repeat="recipe in cookBook">
         <h2><u>{{ recipe.title }}</u></h2>
         <img class="recipeImg" ng-src="{{ recipe.foodImg }}" alt="">
-        <h3><u>Ingredients:</u> {{ recipe.ingredients }}</h3>
+        <h3><u>Ingredients:</u>
+        <ul>
+        <li ng-repeat="ingredient in recipe.ingredients" class="ingredientListItems">{{ ingredient }}</li></ul></h3>
         <p><u><b>Directions:</b></u> {{ recipe.directions }}.</p>
         <h3><u>Total prep time:</u> {{ recipe.prepTime }} minutes</h3>
         <h3><u>Difficulty to make:</u> {{ recipe.difficulty }}</h3>

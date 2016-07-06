@@ -16,6 +16,7 @@ mongoose.connect(config.database, function () {
 mongoose.connection.on("connected", function () {
     console.log("conected to mongod");
 });
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));

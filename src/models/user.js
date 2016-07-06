@@ -20,6 +20,8 @@ var userSchema = new Schema({
     }
 });
 
+// Hash the password.
+
 userSchema.pre("save", function (next) {
     var user = this;
     if (!user.isModified("password")) {
