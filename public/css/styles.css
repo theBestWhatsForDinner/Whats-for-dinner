@@ -37,7 +37,7 @@ body {
     padding-top: 20px;
 }
 
-.nav > ul > li {
+.nav > ul > div > li {
     list-style: none;
     display: inline-block;
     font-size: 20px;
@@ -96,7 +96,8 @@ h2 {
 
 .homeHead {
     text-align: center;
-    border: solid black 2px;
+    background-color: rgba(225, 225, 225, .5);
+    /*    border: solid black 2px;*/
 }
 
 .homeButtons {
@@ -172,7 +173,6 @@ hr:after {
     text-align: center;
 }
 
-
 .goBackA {
     margin-bottom: 10px;
 }
@@ -213,4 +213,3 @@ hr:after {
 .skillImg {
     height: 150px;
 }
-
