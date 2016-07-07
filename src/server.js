@@ -17,6 +17,7 @@ mongoose.connect(config.database, function () {
 mongoose.connection.on("connected", function () {
     console.log("Pop goes the weasel");
 });
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
