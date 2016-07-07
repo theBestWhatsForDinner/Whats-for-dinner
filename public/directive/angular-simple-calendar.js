@@ -17,6 +17,15 @@ angular.module('500tech.simple-calendar', []).directive('simpleCalendar', functi
             $scope.options.multiEventDates = $scope.options.multiEventDates || false;
             $scope.options.maxEventsPerDay = $scope.options.maxEventsPerDay || 3;
 
+            $scope.addDay = function (date) {
+                var thisDay = new Date(date.year + ', ' + (date.month + 1) + ', ' + date.day);
+                $scope.events.push({
+                    title: date.chosenRecipe,
+                    date: thisDay
+                });
+                                console.log($scope.events);
+            };
+
             $scope.onClick = function (date) {
                 if (!date || date.disabled) {
                     return;
