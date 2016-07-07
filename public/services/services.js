@@ -22,9 +22,7 @@ app.service("theService", ["$http", "$routeParams", function ($http, $routeParam
     };
 
     this.getRecipeId = function () {
-        return $http.get(baseRecipeUrl + $routeParams.recipeId).then(function (response) {
-            return response;
-        })
+        return $http.get(baseRecipeUrl + $routeParams.recipeId);
     };
 
     //******PANTRY******
