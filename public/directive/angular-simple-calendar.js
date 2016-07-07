@@ -7,7 +7,7 @@ angular.module('500tech.simple-calendar', []).directive('simpleCalendar', functi
             cookBook: '=?'
         },
         templateUrl: 'directive/calendarTemplate.html',
-        controller: ['$scope', function ($scope) {
+        controller: ['$scope', "$http", function ($scope, $http) {
             var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
             var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             var calculateSelectedDate, calculateWeeks, allowedDate, bindEvent;
@@ -19,11 +19,13 @@ angular.module('500tech.simple-calendar', []).directive('simpleCalendar', functi
 
             $scope.addDay = function (date) {
                 var thisDay = new Date(date.year + ', ' + (date.month + 1) + ', ' + date.day);
-                $scope.events.push({
+                var newEvent = {
                     title: date.chosenRecipe,
                     date: thisDay
+                };
+                $http.post("http://localhost:8000/api/events", newEvent).then(function (responce) {
+                    $scope.events.push(responce.data);
                 });
-                                console.log($scope.events);
             };
 
             $scope.onClick = function (date) {
