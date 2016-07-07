@@ -15,7 +15,7 @@ eventRouter.route("/")
         newEvent = new events(req.body);
         newEvent.user = req.user._id;
         newEvent.save(function (err, event) {
-                if (err)res.status(500).send(err);
+                if (err)res.status(418).send({err: err, success: false, message: "that day has a planned meal already"});
                 else res.send({
                     success: true,
                     message: "Successfully added event",
