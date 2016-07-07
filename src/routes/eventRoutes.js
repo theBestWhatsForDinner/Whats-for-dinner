@@ -23,5 +23,15 @@ eventRouter.route("/")
                 });
             });
     })
+eventRouter.route("/:id")
+    .delete(function (req, res) {
+            events.findOneAndRemove({
+        _id: req.params.id,
+        user: req.user._id
+    }, {new: false}, function (err, event) {
+        if (err) res.status(500).send(err);
+        else res.send(event);
+    });
+            })
 
 module.exports = eventRouter;
