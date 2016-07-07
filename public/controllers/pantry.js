@@ -60,7 +60,26 @@ app.controller("PantryController", ["$scope", "theService", function ($scope, th
             }
         });
     };
+
+    $scope.setColor = function (item) {
+
+
+        var currentDate = Date.now();
+        var expireDate = Date.parse(item.expiration);
+        var countdown = Math.ceil((expireDate - currentDate) / 86400000);
+
+
+        if (countdown < 4) {
+            return {
+                "background-color": "rgba(255, 0, 0, .25)",
+                "color": "white"
+            }
+        }
+    };
+
 }]);
+
+
 
 app.filter('expirationFilter', function () {
 
