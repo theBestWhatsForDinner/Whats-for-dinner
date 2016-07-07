@@ -22,16 +22,16 @@ eventRouter.route("/")
                     event: event
                 });
             });
-    })
+    });
 eventRouter.route("/:id")
     .delete(function (req, res) {
-            events.findOneAndRemove({
+           events.findOneAndRemove({
         _id: req.params.id,
         user: req.user._id
-    }, {new: false}, function (err, event) {
+    }, function (err, event) {
         if (err) res.status(500).send(err);
         else res.send(event);
-    });
+    })
             })
 
 module.exports = eventRouter;
