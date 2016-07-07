@@ -45,7 +45,7 @@ recipesRouter.put("/:recipeId", function (req, res) {
 });
 
 recipesRouter.delete("/:recipeId", function (req, res) {
-    Recipes.findOneAndRemove({
+    Recipes.findByIdAndRemove({
         _id: req.params.recipeId,
         user: req.user._id
     }, function (err, recipe) {
