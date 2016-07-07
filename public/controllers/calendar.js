@@ -57,7 +57,9 @@ app.controller("CalendarController", ["$scope", "theService", function ($scope, 
     
     $scope.saveMeals = function () {
         for (var i = 0; i < $scope.events.length; i++) {
-            theService.addEvent($scope.events[i]).then(function (response) {});
+            theService.addEvent($scope.events[i]).then(function (response) {}, function(responce) {
+                console.log(responce.data.message);
+            });
         };
     };
     $scope.getMeals = function () {
