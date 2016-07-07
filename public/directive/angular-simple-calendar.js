@@ -32,7 +32,6 @@ angular.module('500tech.simple-calendar', []).directive('simpleCalendar', functi
             $scope.deleteEvent = function (item) {
                 var id = item._id;
                 $http.delete("http://localhost:8000/api/events/" + id).then(function (responce) {
-                    console.log(responce);
                 });
             };
 
