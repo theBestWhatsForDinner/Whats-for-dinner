@@ -77,3 +77,10 @@ li:hover .navListContent {
 .navListContent a:hover {
     background-color: rgba(225, 225, 225, .5);
 }
+
+@media (max-width: 520px) {
+    .myRecipeImg {
+        height: 200px;
+        margin-bottom: 20px;
+    }
+}
