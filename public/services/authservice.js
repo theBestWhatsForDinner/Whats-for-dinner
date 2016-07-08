@@ -1,7 +1,7 @@
 var app = angular.module("mealPlannerApp");
 
 app.service("authService", ["$http", function ($http) {
-    var baseurl = "http://localhost:8000/auth/";
+    var baseurl = "/auth/";
 
     this.currentUser = getOrSetUser() || {};
     var self = this;

@@ -2,10 +2,10 @@ var app = angular.module("mealPlannerApp");
 
 app.service("theService", ["$http", "$routeParams", function ($http, $routeParams) {
 
-    var baseAuthUrl = "http://localhost:8000/auth/";
-    var baseRecipeUrl = "http://localhost:8000/api/recipes/";
-    var basePantryUrl = "http://localhost:8000/api/pantry/";
-    var baseApiUrl = "http://localhost:8000/api/";
+    var baseAuthUrl = "/auth/";
+    var baseRecipeUrl = "/api/recipes/";
+    var basePantryUrl = "/api/pantry/";
+    var baseApiUrl = "/api/";
 
     //******RECIPES******
 
@@ -67,13 +67,13 @@ app.service("theService", ["$http", "$routeParams", function ($http, $routeParam
             return titleList;
         })
     };
-    
-    this.addEvent = function(event) {
+
+    this.addEvent = function (event) {
         return $http.post(baseApiUrl + "events", event).then(function (responce) {
             return responce.data;
         })
     };
-    this.getEvents = function() {
+    this.getEvents = function () {
         return $http.get(baseApiUrl + "events").then(function (responce) {
             return responce.data
         })
