@@ -1,10 +1,11 @@
 var app = angular.module("mealPlannerApp");
 
-app.service("theService", ["$http", function ($http) {
+app.service("theService", ["$http", "$routeParams", function ($http, $routeParams) {
 
-    var baseAuthUrl = "http://localhost:8000/auth/";
-    var baseRecipeUrl = "http://localhost:8000/api/recipes/";
-    var basePantryUrl = "http://localhost:8000/api/pantry/";
+    var baseAuthUrl = "/auth/";
+    var baseRecipeUrl = "/api/recipes/";
+    var basePantryUrl = "/api/pantry/";
+    var baseApiUrl = "/api/";
 
     //******RECIPES******
 
@@ -16,17 +17,13 @@ app.service("theService", ["$http", function ($http) {
 
     // Add recipes to cook book
 
-
     this.postRecipe = function (recipe) {
         return $http.post(baseRecipeUrl, recipe);
     };
 
-    this.getRecipeId = function (recipeId) {
-        var recipe = {};
-        return $http.get(baseRecipeUrl + recipeId).then(function (response) {
-            return recipe;
-        });
-    }
+    this.getRecipeId = function () {
+        return $http.get(baseRecipeUrl + $routeParams.recipeId);
+    };
 
     //******PANTRY******
 
@@ -59,6 +56,28 @@ app.service("theService", ["$http", function ($http) {
 
     //******CALENDAR******
 
+    this.getTitle = function () {
+        return $http.get(baseRecipeUrl).then(function (response) {
+            var list = response.data;
+            var titleList = [];
+            var length = list.length;
+            for (var i = 0; i < length; i++) {
+                titleList.push(list[i].title);
+            };
+            return titleList;
+        })
+    };
+
+    this.addEvent = function (event) {
+        return $http.post(baseApiUrl + "events", event).then(function (responce) {
+            return responce.data;
+        })
+    };
+    this.getEvents = function () {
+        return $http.get(baseApiUrl + "events").then(function (responce) {
+            return responce.data
+        })
+    };
 
     //******AUTH******
 

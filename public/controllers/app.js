@@ -1,18 +1,22 @@
-var app = angular.module("mealPlannerApp", ["ngRoute", "ngAnimate", "500tech.simple-calendar"]);
+var app = angular.module("mealPlannerApp", ["ngRoute", "ngAnimate", "500tech.simple-calendar", "ngStorage"]);
 
-app.controller("indexController", ["$scope", "$location", function ($scope, $location) {
+app.controller("indexController", ["$scope", "$location", "authService", function ($scope, $location, authService, $localStorage) {
+
+    this.authService = authService;
 
     $scope.scroll = function () {
         window.scroll(0, 0);
     };
 
     $scope.logOut = function () {
+        authService.removeUser()
         localStorage.removeItem("token");
         localStorage.removeItem("_id");
         $location.path("/logout");
+
     };
 
-    $scope.loggedIn = function() {
+    $scope.loggedIn = function () {
         var token = localStorage.getItem("token");
         if (token) {
             return true;
@@ -20,7 +24,6 @@ app.controller("indexController", ["$scope", "$location", function ($scope, $loc
             return false;
         }
     }
-    
 
 }]);
 
@@ -28,23 +31,27 @@ app.config(function ($routeProvider) {
 
     $routeProvider
         .when("/pantry", {
-            templateUrl: "pantry.html",
+            templateUrl: "pages/pantry.html",
             controller: "PantryController"
         })
         .when("/calendar", {
-            templateUrl: "calendar.html",
+            templateUrl: "pages/calendar.html",
             controller: "CalendarController"
         })
         .when("/recipes/:recipeId", {
-            templateUrl: "recipe.html",
+            templateUrl: "pages/recipe.html",
+            controller: "RecipeController"
+        })
+        .when("/recipes/:date.event[0].titleId", {
+            templateUrl: "pages/recipe.html",
             controller: "RecipeController"
         })
         .when("/recipes", {
-            templateUrl: "recipes.html",
+            templateUrl: "pages/recipes.html",
             controller: "RecipeController"
         })
         .when("/home", {
-            templateUrl: "home.html",
+            templateUrl: "pages/home.html",
             controller: "HomeController"
         })
         .when("/login", {
@@ -57,7 +64,7 @@ app.config(function ($routeProvider) {
         })
         .when("/settings", {
             templateUrl: "./auth/userprofile.html",
-            controller: "authController"
+            controller: "ProfileController"
         })
         .otherwise({
             templateUrl: "./auth/landing.html",

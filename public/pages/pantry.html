@@ -18,22 +18,22 @@
 
 <div class="row">
 
-    <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 ingredient" ng-repeat="item in pantry | orderBy:'expiration' track by $index">
+    <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 ingredient" ng-repeat="item in pantry | orderBy:'expiration' track by item._id" ng-style="setColor(item)">
         <div class="titleDiv">
-            <h2>{{ item.title }}</h2>
+            <h2>{{ item.title | capitalize }}</h2>
         </div>
         <div class="imageDiv">
             <img class="ingredientImg" ng-src="{{ item.url }}" alt="">
             <br>
             <br>
             <p>Quantity: {{ item.quantity }}</p>
-            <p>Expires in {{ item.expiration | expirationFilter }} days.</p>
-            <button ng-click="quantityUp($index)" class="btn btn-info quantity"><span class="glyphicon glyphicon-plus"></span></button>
-            <button ng-click="quantityDown($index)" class="btn btn-info quantity"><span class="glyphicon glyphicon-minus"></span></button>
+            <p>Expires in {{ item.expiration  | expirationFilter }} days.</p>
+            <button ng-click="quantityUp(item)" class="btn btn-info quantity"><span class="glyphicon glyphicon-plus"></span></button>
+            <button ng-click="quantityDown(item)" class="btn btn-info quantity"><span class="glyphicon glyphicon-minus"></span></button>
             <br>
             <br>
             <h1></h1>
-            <button ng-click="deleteIngredient(item._id, $index)" class="btn btn-danger deleteIngredient"><span class="glyphicon glyphicon-trash"></span></button>
+            <button ng-click="deleteIngredient(item)" class="btn btn-danger deleteIngredient"><span class="glyphicon glyphicon-trash"></span></button>
         </div>
     </div>
 </div>

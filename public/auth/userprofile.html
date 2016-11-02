@@ -1,4 +1,25 @@
-<div>
-<h1>BLARG</h1>
-<h1>DARG</h1>
+<!--
+User name
+favorite food
+favorite food Img
+user Img
+User cooking skill level-->
+
+
+<div class="container userProfile">
+    <div class="row">
+        <div class="head">
+            <h1><u>{{authService.currentUser.username | capitalize}}'s profile</u></h1>
+        </div>
+        <br>
+        <div class="col-lg-6 col-lg-offset-1">
+            <h3><u>User name:</u> {{authService.currentUser.name | capitalize}}</h3>
+            <h3><u>Favorite food:</u> {{authService.currentUser.favoriteFood | capitalize}}</h3>
+            <h3><u>Skill level:</u> {{authService.currentUser.skill}}</h3>
+            <img class="skillImg" ng-src="{{imgUrl}}" alt="">
+        </div>
+        <div class="col-lg-2 col-lg-offset-7">
+            <img class="profileImg" ng-src="{{authService.currentUser.userImg}}" alt="">
+        </div>
+    </div>
 </div>

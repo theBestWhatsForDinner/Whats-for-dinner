@@ -1,7 +1,17 @@
-<section>
-    <form>
-        <div><input type="text" ng-model="user.username"></div>
-        <div><input type="password" ng-model="user.password"></div>
-        <button ng-click="logIn(user)">LOG IN</button>
-    </form>
-</section>
+<div class="row loginDiv">
+    <section class="well col-lg-4 col-lg-offset-4">
+        <form>
+            <label>Username</label>
+            <br>
+            <input type="text" placeholder="Username" ng-model="user.username">
+            <br>
+            <br>
+            <label>Password</label>
+            <br>
+            <input type="password" placeholder="Password" ng-model="user.password">
+            <br>
+            <br>
+            <button class="btn btn-lg btn-default" ng-click="logIn(user)">LOG IN</button>
+        </form>
+    </section>
+</div>
