@@ -24,15 +24,22 @@ angular.module('500tech.simple-calendar', []).directive('simpleCalendar', functi
                     date: thisDay
                 };
                 $http.post("http://localhost:8000/api/events", newEvent).then(function (responce) {
-                    $scope.events.push(responce.data);
-                    $scope.events = $scope.events;
+                    if (responce.data.success === true) {
+                        var responceEvent = responce.data.event;
+                        responceEvent.date = new Date(responceEvent.date.slice(0, 4) + ", " + responceEvent.date.slice(5, 7) + ", " + responceEvent.date.slice(8, 10));
+                        console.log(responceEvent);
+                        $scope.events.push(responce.data.event);
+                        $scope.events = $scope.events;
+                        date.event.push(responceEvent);
+                    } else {
+                        console.log(responce.data.message);
+                    }
                 });
             };
-            
+
             $scope.deleteEvent = function (item) {
                 var id = item._id;
-                $http.delete("http://localhost:8000/api/events/" + id).then(function (responce) {
-                });
+                $http.delete("http://localhost:8000/api/events/" + id).then(function (responce) {});
             };
 
             $scope.onClick = function (date) {
