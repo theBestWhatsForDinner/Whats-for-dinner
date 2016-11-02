@@ -30,7 +30,11 @@ eventRouter.route("/:id")
         user: req.user._id
     }, function (err, event) {
         if (err) res.status(500).send(err);
-        else res.send(event);
+        else res.send({
+            success: true,
+            message: "BALETED",
+            event: event
+        });
     })
             })
 

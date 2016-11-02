@@ -23,7 +23,7 @@
             </div>
             <div class="event-title" ng-if="!options.multiEventDates"><a href="#/recipes/{{ date.event[0].title._id }}">{{ date.event[0].title.title || "&nbsp;" | capitalize }}</a></div>
             <div>
-                <button ng-if="date.event[0].title.title" ng-click="deleteEvent(date.event[0])">Delete</button>
+                <button ng-if="date.event[0].title.title" ng-click="deleteEvent(date)">Delete</button>
                 <select ng-options="recipe.title for recipe in cookBook" ng-model="date.chosenRecipe" ng-if="date.day && !date.disabled && !date.event[0].title.title"></select>
                 <button ng-if="date.chosenRecipe" ng-click="addDay(date)">Save</button>
             </div>

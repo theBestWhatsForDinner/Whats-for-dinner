@@ -26,6 +26,7 @@ angular.module('500tech.simple-calendar', []).directive('simpleCalendar', functi
                 $http.post("http://localhost:8000/api/events", newEvent).then(function (responce) {
                     if (responce.data.success === true) {
                         var responceEvent = responce.data.event;
+                        // date parser might need refractoring single diget days/months
                         responceEvent.date = new Date(responceEvent.date.slice(0, 4) + ", " + responceEvent.date.slice(5, 7) + ", " + responceEvent.date.slice(8, 10));
                         console.log(responceEvent);
                         $scope.events.push(responce.data.event);
@@ -37,9 +38,22 @@ angular.module('500tech.simple-calendar', []).directive('simpleCalendar', functi
                 });
             };
 
-            $scope.deleteEvent = function (item) {
-                var id = item._id;
-                $http.delete("http://localhost:8000/api/events/" + id).then(function (responce) {});
+            $scope.deleteEvent = function (date) {
+                var id = date.event[0]._id;
+                $http.delete("http://localhost:8000/api/events/" + id).then(function (responce) {
+                    if (responce.data.success === true) {
+                        var eventLength = $scope.events.length;
+                        for (var i = 0; i < eventLength; i++) {
+                            if ($scope.events[i]._id === id) {
+                                $scope.events.splice(i, 1);
+                                date.event.splice(0,1);
+                                break;
+                            }
+                        }
+                    } else {
+                        console.log(responce.data);
+                    }
+                });
             };
 
             $scope.onClick = function (date) {
